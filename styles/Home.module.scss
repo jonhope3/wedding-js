@@ -1,0 +1,233 @@
+@import "fonts";
+
+.html {
+  height: 100vh;
+}
+
+.body {
+  /*height: 100%;*/
+  margin: 0;
+}
+
+.container {
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.parallaxBanner {
+  height: 100vh;
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.nav li {
+  margin: 0 15px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-family: 'Sofia Sans Condensed', sans-serif;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #888;
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  font-family: 'Sofia Sans Condensed', sans-serif;
+  font-size: 4rem;
+  margin: 0;
+  font-weight: 300;
+}
+
+.date {
+  font-family: 'Sofia Sans Condensed', sans-serif;
+  font-size: 1.5rem;
+  margin: 20px 0;
+}
+
+.rsvpButton {
+  margin-top: 30px;
+  padding: 10px 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  font-family: 'Sofia Sans Condensed', sans-serif;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.rsvpButton:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.parallaxBanner {
+  height: 100vh;
+}
+
+.parallaxBannerLight {
+  height: 100vh;
+  opacity: 0.85;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 1000;
+}
+
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.nav li {
+  margin: 0 15px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-family: 'Sofia Sans Condensed', sans-serif;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #888;
+}
+
+.main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  font-family: 'Sofia Sans Condensed', sans-serif;
+  font-size: 4rem;
+  margin: 0;
+  font-weight: 300;
+}
+
+.date {
+  font-family: 'Sofia Sans Condensed', sans-serif;
+  font-size: 1.5rem;
+  margin: 20px 0;
+}
+
+.rsvpButton {
+  margin-top: 30px;
+  padding: 10px 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  font-family: 'Sofia Sans Condensed', sans-serif;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.rsvpButton:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.section h2 {
+  font-family: 'Sofia Sans Condensed', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.section p, .section ul {
+  font-family: 'Sofia Sans Condensed', sans-serif;
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section ul {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.overlayContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.overlayContent h2 {
+  font-family: AmsterdamOne, cursive;
+  font-size: 5rem;
+  margin-bottom: 10px;
+}
+
+.overlayContent p {
+  font-family: 'Sofia Sans Condensed', sans-serif;
+  font-size: 1.2rem;
+}
