@@ -26,32 +26,28 @@ export default function Home() {
                         <ParallaxBanner
                             layers={[
                                 {
-                                    image: '../bg1.jpeg',
+                                    image: `${process.env.NEXT_PUBLIC_BASE_PATH}/beach-hd.jpeg`,
                                     speed: -50
                                 }
                             ]}
                             className={styles.parallaxBannerLight}
                         >
-                            <main className={styles.main} id="home">
-                                <h1 className={styles.title}>John & Jane</h1>
-                                <p className={styles.date}>August 15, 2025</p>
-                                <a href="#rsvp" className={styles.rsvpButton}>RSVP</a>
-                            </main>
-
                             <div className={styles.overlayContent}>
                                 <h2>Ashley & Jon</h2>
+                                <h3>October 18, 2025</h3>
+                                <button className={styles.rsvpButton}>SAVE OUR DATE</button>
                             </div>
                         </ParallaxBanner>
 
                         <section id="details" className={styles.section}>
                             <Parallax translateY={[-15, 15]}>
                                 <h2>Wedding Details</h2>
-                                <p>Join us for our celebration of love!</p>
+                                <p>Join us for our celebration!</p>
                                 <ul>
-                                    <li>Date: August 15, 2025</li>
-                                    <li>Time: 4:00 PM</li>
-                                    <li>Venue: The Grand Hotel, New York City</li>
-                                    <li>Dress Code: Formal</li>
+                                    <li>Date: October 18, 2025</li>
+                                    <li>Time: 4:30 PM CDT</li>
+                                    <li>Venue: TO BE ADDED</li>
+                                    <li>Dress Code: TO BE ADDED</li>
                                 </ul>
                             </Parallax>
                         </section>
@@ -59,7 +55,7 @@ export default function Home() {
                         <ParallaxBanner
                             layers={[
                                 {
-                                    image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622',
+                                    image: `${process.env.NEXT_PUBLIC_BASE_PATH}/beach-hd.jpeg`,
                                     speed: -15
                                 }
                             ]}
@@ -76,7 +72,7 @@ export default function Home() {
                                 <h2>RSVP</h2>
                                 <p>We would be honored to have you join us on our special day. Please RSVP by July 1,
                                     2025.</p>
-                                <button className={styles.rsvpButton}>RSVP Now</button>
+                                <button className={styles.rsvpButtonSection}>RSVP NOW</button>
                             </Parallax>
                         </section>
                     </>

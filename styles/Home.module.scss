@@ -5,7 +5,6 @@
 }
 
 .body {
-  /*height: 100%;*/
   margin: 0;
 }
 
@@ -74,22 +73,6 @@
   font-family: 'Sofia Sans Condensed', sans-serif;
   font-size: 1.5rem;
   margin: 20px 0;
-}
-
-.rsvpButton {
-  margin-top: 30px;
-  padding: 10px 30px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 2px solid white;
-  color: white;
-  text-decoration: none;
-  font-family: 'Sofia Sans Condensed', sans-serif;
-  font-size: 1.2rem;
-  transition: background-color 0.3s ease;
-}
-
-.rsvpButton:hover {
-  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .container {
@@ -219,6 +202,10 @@
   text-align: center;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
 }
 
 .overlayContent h2 {
@@ -227,7 +214,41 @@
   margin-bottom: 10px;
 }
 
+.overlayContent h3 {
+  font-family: 'Sofia Sans Condensed', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
 .overlayContent p {
   font-family: 'Sofia Sans Condensed', sans-serif;
   font-size: 1.2rem;
+}
+
+.rsvpButton,
+.rsvpButtonSection {
+  font-family: 'Sofia Sans Condensed', sans-serif;
+  text-shadow: none;
+  font-size: 1.5rem;
+  font-weight: 400;
+  border-radius: 30px;
+  transition: 0.25s;
+  padding: 8px 20px;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.rsvpButton {
+  color: rgb(51, 51, 51);
+  background: #fff;
+
+}
+
+.rsvpButtonSection {
+  margin-top: 1.5rem;
+  color: #fff;
+  background: rgb(51, 51, 51);
 }
