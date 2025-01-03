@@ -19,109 +19,9 @@
   height: 100vh;
 }
 
-.nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-.nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-}
-
-.nav li {
-  margin: 0 15px;
-}
-
-.nav a {
-  text-decoration: none;
-  color: #333;
-  font-family: 'Sofia Sans Condensed', sans-serif;
-  font-size: 18px;
-  transition: color 0.3s ease;
-}
-
-.nav a:hover {
-  color: #888;
-}
-
-.main {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.title {
-  font-family: 'Sofia Sans Condensed', sans-serif;
-  font-size: 4rem;
-  margin: 0;
-  font-weight: 300;
-}
-
-.date {
-  font-family: 'Sofia Sans Condensed', sans-serif;
-  font-size: 1.5rem;
-  margin: 20px 0;
-}
-
-.container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.parallaxBanner {
-  height: 100vh;
-}
-
 .parallaxBannerLight {
   height: 100vh;
   opacity: 0.85;
-}
-
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
-  z-index: 1000;
-}
-
-.nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-}
-
-.nav li {
-  margin: 0 15px;
-}
-
-.nav a {
-  text-decoration: none;
-  color: #333;
-  font-family: 'Sofia Sans Condensed', sans-serif;
-  font-size: 18px;
-  transition: color 0.3s ease;
-}
-
-.nav a:hover {
-  color: #888;
 }
 
 .main {
@@ -244,7 +144,6 @@
 .rsvpButton {
   color: rgb(51, 51, 51);
   background: #fff;
-
 }
 
 .rsvpButtonSection {
