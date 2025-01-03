@@ -1,8 +1,9 @@
 import {useEffect, useState} from 'react';
-import {Parallax, ParallaxBanner, ParallaxProvider} from 'react-scroll-parallax';
+import {ParallaxBanner, ParallaxProvider} from 'react-scroll-parallax';
 import styles from '../styles/Home.module.scss';
-import MapComponent from "../components/MapComponent";
 import NavBar from "../components/NavBar";
+import Event from "../components/EventComponent";
+import EventWrapper from "../components/EventWrapper";
 
 export default function Home() {
     const [mounted, setMounted] = useState(false);
@@ -13,7 +14,7 @@ export default function Home() {
 
     return (
         <ParallaxProvider>
-            <div className={styles.container}>
+            <div id="home" className={styles.container}>
 
                 <NavBar/>
 
@@ -31,49 +32,45 @@ export default function Home() {
                             <div className={styles.overlayContent}>
                                 <h2>Ashley & Jon</h2>
                                 <h3>October 18, 2025</h3>
-                                <button className={styles.rsvpButton}>
+                                <button className={styles.rsvpButton} onClick={() => {
+                                    if (confirm("Download Calendar Invite?")) {
+                                        console.log("Canceling calendar invite");
+                                    } else {
+                                        console.log("Canceling calendar invite");
+                                    }
+                                }}>
                                     SAVE OUR DATE
                                 </button>
                             </div>
                         </ParallaxBanner>
 
-                        {/*<section id="details" className={styles.section}>*/}
-                        {/*    <Parallax translateY={[-15, 15]}>*/}
-                        {/*        <h2>Wedding Details</h2>*/}
-                        {/*        <p>Join us for our celebration!</p>*/}
-                        {/*        <ul>*/}
-                        {/*            <li>Date: October 18, 2025</li>*/}
-                        {/*            <li>Time: 4:30 PM CDT</li>*/}
-                        {/*            <li>Venue: TO BE ADDED</li>*/}
-                        {/*            <li>Dress Code: TO BE ADDED</li>*/}
-                        {/*        </ul>*/}
-                        {/*        <GMap/>*/}
-                        {/*    </Parallax>*/}
-                        {/*</section>*/}
+                        <section id="event-details" className={styles.section}>
+                            <EventWrapper>
+                                <Event
+                                    eventName="Welcome Bonfire"
+                                    eventDate="October 16, 2025"
+                                    eventTime="5:00 PM CDT"
+                                    eventLocation="Miramar Beach, FL"
+                                    imageUrl={`${process.env.NEXT_PUBLIC_BASE_PATH}/placeholder200.png`}
+                                />
 
-                        {/*<ParallaxBanner*/}
-                        {/*    layers={[*/}
-                        {/*        {*/}
-                        {/*            image: `${process.env.NEXT_PUBLIC_BASE_PATH}/beach-hd.jpeg`,*/}
-                        {/*            speed: -15*/}
-                        {/*        }*/}
-                        {/*    ]}*/}
-                        {/*    className={styles.parallaxBanner}*/}
-                        {/*>*/}
-                        {/*    <div className={styles.overlayContent}>*/}
-                        {/*        <h2>"To love and be loved is to feel the sun from both sides."</h2>*/}
-                        {/*        <p>- David Viscott</p>*/}
-                        {/*    </div>*/}
-                        {/*</ParallaxBanner>*/}
+                                <Event
+                                    eventName="Wedding Ceremony"
+                                    eventDate="October 18, 2025"
+                                    eventTime="4:00 PM CDT"
+                                    eventLocation="Miramar Beach, FL"
+                                    imageUrl={`${process.env.NEXT_PUBLIC_BASE_PATH}/placeholder200.png`}
+                                />
 
-                        {/*<section id="rsvp" className={styles.section}>*/}
-                        {/*    <Parallax translateY={[-10, 10]}>*/}
-                        {/*        <h2>RSVP</h2>*/}
-                        {/*        <p>We would be honored to have you join us on our special day. Please RSVP by July 1,*/}
-                        {/*            2025.</p>*/}
-                        {/*        <button className={styles.rsvpButtonSection}>RSVP NOW</button>*/}
-                        {/*    </Parallax>*/}
-                        {/*</section>*/}
+                                <Event
+                                    eventName="Reception"
+                                    eventDate="October 18, 2025"
+                                    eventTime="4:30 PM CDT"
+                                    eventLocation="Miramar Beach, FL"
+                                    imageUrl={`${process.env.NEXT_PUBLIC_BASE_PATH}/placeholder200.png`}
+                                />
+                            </EventWrapper>
+                        </section>
                     </>
                 )}
             </div>

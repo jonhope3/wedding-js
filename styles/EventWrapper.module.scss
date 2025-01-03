@@ -1,0 +1,13 @@
+// EventWrapper.module.scss
+@import "fonts";
+
+.eventWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  min-height: 100vh;
+  align-content: flex-start;
+}
+

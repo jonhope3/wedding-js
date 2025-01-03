@@ -65,33 +65,10 @@
 }
 
 .section {
+  margin: 5vh 0; // %5 of the viewport height on top and bottom
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 50px 20px;
-  background-color: #fff;
-  text-align: center;
-}
-
-.section h2 {
-  font-family: 'Sofia Sans Condensed', sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.section p, .section ul {
-  font-family: 'Sofia Sans Condensed', sans-serif;
-  font-size: 1.2rem;
-  color: #666;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.section ul {
-  text-align: left;
-  margin-top: 20px;
 }
 
 .overlayContent {
@@ -111,13 +88,13 @@
 .overlayContent h2 {
   font-family: AmsterdamOne, cursive;
   font-size: 5rem;
-  margin-bottom: 10px;
+  //margin-bottom: 10px;
 }
 
 .overlayContent h3 {
   font-family: 'Sofia Sans Condensed', sans-serif;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 .overlayContent p {

@@ -6,7 +6,7 @@ function NavBar() {
         <nav className={styles.nav}>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#details">Details</a></li>
+                <li><a href="#event-details">Details</a></li>
                 <li><a href="#rsvp">RSVP</a></li>
             </ul>
         </nav>);
