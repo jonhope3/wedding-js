@@ -1,4 +1,5 @@
-@import "fonts";
+@use "fonts";
+@use "variables";
 
 .html {
   height: 100vh;
@@ -15,12 +16,20 @@
   flex-direction: column;
 }
 
-.parallaxBanner {
-  height: 100vh;
+.lineSeparator {
+  width: 75%;
+  border: none;
+  border-top: 1px solid black; /* Adjust the thickness and color as needed */
+  margin: 0 auto; /* Adjust the margin as needed */
 }
 
 .parallaxBannerLight {
   height: 100vh;
+  opacity: 0.85;
+}
+
+.parallaxBannerLightSmall {
+  height: 50vh;
   opacity: 0.85;
 }
 
@@ -65,10 +74,29 @@
 }
 
 .section {
-  margin: 5vh 0; // %5 of the viewport height on top and bottom
-  min-height: 100vh;
+  //background-color: #F8F0EC;
   display: flex;
+  flex-direction: column; // Stack children vertically
   justify-content: center;
+  align-items: center; // Center children horizontally
+}
+
+.section h2 {
+  padding: 0;
+  margin-top: 5%;
+  display: flex;
+  font-family: AmsterdamOne, cursive;
+  font-size: 4em;
+  justify-content: center;
+  align-items: center;
+
+  & {
+    // Not selectable
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard syntax */
+  }
 }
 
 .overlayContent {
@@ -82,31 +110,48 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 100px;
+  gap: 20px; // Adjusted gap for better spacing on mobile
 }
 
 .overlayContent h2 {
+  height: auto;
   font-family: AmsterdamOne, cursive;
-  font-size: 5rem;
-  //margin-bottom: 10px;
+  font-size: 3rem; // Adjusted font size for mobile
+
+  // Laptop size
+  @media (min-width: variables.$desktop-size) {
+    font-size: 5rem;
+  }
+
+  & {
+    // Not selectable
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard syntax */
+  }
 }
 
 .overlayContent h3 {
   font-family: 'Sofia Sans Condensed', sans-serif;
-  font-size: 2rem;
   font-weight: 500;
+  font-size: 1.5rem; // Adjusted font size for mobile
+
+  @media (min-width: variables.$desktop-size) {
+    font-size: 2rem;
+  }
 }
 
 .overlayContent p {
   font-family: 'Sofia Sans Condensed', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1rem; // Adjusted font size for mobile
 }
 
 .rsvpButton,
 .rsvpButtonSection {
   font-family: 'Sofia Sans Condensed', sans-serif;
   text-shadow: none;
-  font-size: 1.5rem;
+  font-size: 1rem; // Adjusted font size for mobile
   font-weight: 400;
   border-radius: 30px;
   transition: 0.25s;

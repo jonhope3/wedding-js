@@ -1,0 +1,36 @@
+// TextComponent.module.scss
+@use "fonts";
+@use "variables";
+
+.textComponent {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Sofia Sans Condensed', sans-serif;
+  font-size: 1.25rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 0 30px;
+  padding: 36px;
+  width: 90%;
+  line-height: 1.5;
+
+  @media (min-width: variables.$desktop-size) {
+    width: 60%;
+  }
+}
+
+.textComponent h2,
+.textComponent h3,
+.textComponent h4 {
+  text-align: center;
+}
+
+.textComponent p {
+  text-align: left;
+}
+
+.contentContainer {
+  margin: 0 auto;
+  max-width: 90%;
+}

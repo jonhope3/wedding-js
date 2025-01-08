@@ -1,0 +1,130 @@
+BEGIN:VCALENDAR
+METHOD:PUBLISH
+PRODID:Microsoft Exchange Server 2010
+VERSION:2.0
+X-WR-CALNAME:Calendar
+BEGIN:VTIMEZONE
+TZID:Central Standard Time
+BEGIN:STANDARD
+DTSTART:16010101T020000
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=1SU;BYMONTH=11
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010101T020000
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=2SU;BYMONTH=3
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+DESCRIPTION:\n‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌\nCan't see thi
+ s message? View in a browser<https://myahglamco.com/so/tr/9db732d6-72fd-4c
+ 69-801e-7e37ff8def45/c?w=Ko3gW%2FA85SPTaEVHBCxuHQnEehAKZqEGe0gLEKDd%2F1I.e
+ yJ1IjoiaHR0cHM6Ly9teWFoZ2xhbWNvLmNvbS9zby90ci85ZGI3MzJkNi03MmZkLTRjNjktODA
+ xZS03ZTM3ZmY4ZGVmNDUiLCJjIjoiNDUzNzZlN2YtODMyNC00ZTExLWFlMTYtYjM3NTQ5ZjQyM
+ mMwIiwibSI6Im1haWwifQ>\n \n[https://images.wixstatic.com/media/7f3544_f7
+ f6694b7e94429a81a05baf1024b982~mv2.png/v1/fit/h_180\,q_100\,w_698\,al_c\,l
+ g_0/7f3544_f7f6694b7e94429a81a05baf1024b982~mv2.png]\n\nAshley\, thanks fo
+ r booking a Free Phone Consultation.\n\n\n\nI look forward to speaking wit
+ h you and discussing your wedding day hair and makeup needs.\n\n\n\nWe req
+ uire a minimum of four hair and four makeup services. If you do not meet t
+ he minimum our phone call will be cancelled.\n\n\n\nI will give you a call
+  at the number you listed when booking.\n\n\n\nIf you need anything before
+  we talk\, please email me. Otherwise\, I will see you at January 22\, 202
+ 5 at 5:00 PM CST.\n\n\n\nMyah\n\n\nView Appointment Details<https://myahgl
+ amco.com/so/tr/9db732d6-72fd-4c69-801e-7e37ff8def45/c?w=hTTaaUlNQPnht6%2FT
+ v4dmnX7MUj0p-rnAecM7%2FmHoVok.eyJ1IjoiaHR0cHM6Ly93d3cubXlhaGdsYW1jby5jb20v
+ c2VydmljZS1wYWdlL2ZyZWUtcGhvbmUtY29uc3VsdGF0aW9uIiwiciI6IjJiODQ3YjU3LWFmMj
+ AtNGIxZi1iYjQ1LThlZGQ5Mjg4MWQ2ZiIsImMiOiI0NTM3NmU3Zi04MzI0LTRlMTEtYWUxNi1i
+ Mzc1NDlmNDIyYzAiLCJtIjoibWFpbCJ9>\n850-739-4247<https://myahglamco.com/so/
+ tr/9db732d6-72fd-4c69-801e-7e37ff8def45/c?w=NgMlOKhnQJ8TPs3vvbPz3-7PS0SWyt
+ z7m4JM7QyIs1E.eyJ1IjoidGVsOjg1MC03MzktNDI0NyIsInIiOiIwNzI2ZDJlZC1kZGRkLTQ5
+ M2QtYTc5Ni1kOGI0YTE3ZDJmOTEiLCJjIjoiNDUzNzZlN2YtODMyNC00ZTExLWFlMTYtYjM3NT
+ Q5ZjQyMmMwIiwibSI6Im1haWwifQ>\n\nBack to Myah Glam Co  [https://images.wix
+ static.com/media/b49ee3_dd9b1a8812ae41138409a667954a6088~mv2.png/v1/fit/w_
+ 750\,h_750\,br_-99\,sat_-100\,hue_180\,lg_0/b49ee3_dd9b1a8812ae41138409a66
+ 7954a6088~mv2.png] <https://myahglamco.com/so/tr/9db732d6-72fd-4c69-801e-7
+ e37ff8def45/c?w=D6pzIZCehdha4FT3RbhFdObcndeDFBdGK9lsnUBrQKI.eyJ1IjoiaHR0cH
+ M6Ly93d3cubXlhaGdsYW1jby5jb20vIiwiciI6IjA3MjZkMmVkLWRkZGQtNDkzZC1hNzk2LWQ4
+ YjRhMTdkMmY5MSIsImMiOiI0NTM3NmU3Zi04MzI0LTRlMTEtYWUxNi1iMzc1NDlmNDIyYzAiLC
+ JtIjoibWFpbCJ9>\n \nThis email was sent from this site<https://myahglamc
+ o.com/so/tr/9db732d6-72fd-4c69-801e-7e37ff8def45/c?w=ujpjc7XYxw3ARdviQBLlu
+ gobjAinWxD4j1ZT60JDqNw.eyJ1IjoiaHR0cHM6Ly93d3cubXlhaGdsYW1jby5jb20vIiwiYyI
+ 6IjQ1Mzc2ZTdmLTgzMjQtNGUxMS1hZTE2LWIzNzU0OWY0MjJjMCIsIm0iOiJtYWlsIn0>.\nIf
+  you no longer wish to receive this email\, change your email preferences 
+ here<https://www.myahglamco.com//_manage-consent/api/revoke-consent/unsubs
+ cribe?wixToken=JWE.eyJhbGciOiJBMTI4S1ciLCJlbmMiOiJBMTI4Q0JDLUhTMjU2Iiwia2l
+ kIjoiZkhJbFA4M1cifQ.4weLnmt66gvYLs9us19JFLKB3E3tRHitWb2JM9oPAK227MzVTeFrZg
+ .T2cAS_Jb9bYGRii6tpCCLw.UgVstF_cjkUwau2-gFdclvmj5zVX6u9GSbVQEmyP-5w2AB0SaQ
+ phX0xqtraP5xnlBzyqiKGsQ4xVYiwgZut8JO4733hMAOghNXP93hEtiinmRijlY_68VECIExGc
+ pofM3FRltpiN0NY8akZk2E8mzSGlbfDoT8hZJN2KddNUrxJFHRaAMf6jAr35M8YKuW8qlWWWP9
+ buNId-0u72P_txhJNCu6erCotP1OjCpzIZH6BJz0vX0Dk6Zq-FPcsCGsu2guybAVR3vQfTesig
+ L6sSdy-u-AZnE8T9yE0zi4IxM1z949SaK0D567jsLaRRJYpdcEwWRXvyrY6YcSQXyWt32nwReA
+ p5IkQ7_SOr4qCWIK_RtHa17kxtdccZRldWm2Yprn1UOcs2kMfqjVZe8sGkE39p3CHcS3_Iwmxd
+ rz_7ZSWEmuiSGnse8p67yOE_PNHs.VmNnN5EBZO219vMb3PJ4tw&locale=en>.\n\n
+UID:ab74eb8a-9ae9-4909-84d0-30ef9344de2c
+SUMMARY:Free Phone Consultation
+DTSTART;TZID=Central Standard Time:20250122T170000
+DTEND;TZID=Central Standard Time:20250122T173000
+CLASS:PUBLIC
+PRIORITY:5
+DTSTAMP:20250121T193844Z
+TRANSP:OPAQUE
+STATUS:CONFIRMED
+SEQUENCE:5
+LOCATION:Phone or Zoom
+X-MICROSOFT-CDO-APPT-SEQUENCE:5
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INSTTYPE:0
+X-MICROSOFT-DONOTFORWARDMEETING:FALSE
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MICROSOFT-REQUESTEDATTENDANCEMODE:DEFAULT
+X-MICROSOFT-ISRESPONSEREQUESTED:FALSE
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:\n
+UID:040000008200E00074C5B7101A82E00800000000A7AADEBC3B6CDB01000000000000000
+ 010000000BCE5B06323D8EF4D8501679512028D92
+SUMMARY:Ashley Teinert and Jon Hope Wedding
+DTSTART;TZID=Central Standard Time:20251018T160000
+DTEND;TZID=Central Standard Time:20251018T163000
+CLASS:PUBLIC
+PRIORITY:5
+DTSTAMP:20250121T193844Z
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+LOCATION:
+X-MICROSOFT-CDO-APPT-SEQUENCE:0
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INSTTYPE:0
+X-MICROSOFT-DONOTFORWARDMEETING:FALSE
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MICROSOFT-REQUESTEDATTENDANCEMODE:DEFAULT
+X-MICROSOFT-ISRESPONSEREQUESTED:FALSE
+END:VEVENT
+END:VCALENDAR

@@ -1,40 +1,152 @@
 import {useEffect, useState} from 'react';
+import Image from 'next/image';
 import {ParallaxBanner, ParallaxProvider} from 'react-scroll-parallax';
-import styles from '../styles/Home.module.scss';
-import NavBar from "../components/NavBar";
+import homeStyles from '../styles/Home.module.scss';
+import textStyles from '../styles/TextComponent.module.scss';
+import DesktopNavBar from "../components/DesktopNavBar";
 import Event from "../components/EventComponent";
 import EventWrapper from "../components/EventWrapper";
+import TextComponent from "../components/TextComponent";
+import Footer from "../components/Footer";
+import {FaBicycle, FaHotel, FaMapMarkerAlt, FaPlane, FaUmbrellaBeach, FaUtensils} from 'react-icons/fa';
+import {Dialog, IconButton, ImageList, ImageListItem, useMediaQuery} from "@mui/material";
+import CloseIcon from '@mui/icons-material/Close';
+import MobileNavBar from "../components/MobileNavBar";
 
 export default function Home() {
     const [mounted, setMounted] = useState(false);
+    const [openDialog, setOpenDialog] = useState(false);
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+
+    const isDesktop = useMediaQuery('(min-width:768px)');
+    const photoGalleryColumns = isDesktop ? 5 : 3;
+    const pictureData = [
+        // {
+        //     img: `${process.env.NEXT_PUBLIC_BASE_PATH}/beach-hd.jpeg`,
+        //     title: 'Bed',
+        // },
+        {
+            img: 'https://images.unsplash.com/photo-1525097487452-6278ff080c31',
+            title: 'Books',
+        },
+        {
+            img: 'https://images.unsplash.com/photo-1523413651479-597eb2da0ad6',
+            title: 'Sink',
+        },
+        {
+            img: 'https://images.unsplash.com/photo-1563298723-dcfebaa392e3',
+            title: 'Kitchen',
+        },
+        {
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/ring-photo.jpeg`,
+            title: 'Blinds',
+        },
+        {
+            img: 'https://images.unsplash.com/photo-1574180045827-681f8a1a9622',
+            title: 'Chairs',
+        },
+        {
+            img: 'https://images.unsplash.com/photo-1530731141654-5993c3016c77',
+            title: 'Laptop',
+        },
+        {
+            img: 'https://images.unsplash.com/photo-1481277542470-605612bd2d61',
+            title: 'Doors',
+        },
+        {
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/beach-hd.jpeg`,
+            title: 'Coffee',
+        },
+        {
+            img: 'https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee',
+            title: 'Storage',
+        },
+        {
+            img: 'https://images.unsplash.com/photo-1597262975002-c5c3b14bbd62',
+            title: 'Candle',
+        },
+        {
+            img: 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4',
+            title: 'Coffee table',
+        },
+    ];
 
     useEffect(() => {
         setMounted(true);
+
+        let prevScrollPos = window.scrollY;
+        let scrollTimeout;
+
+        const handleScroll = () => {
+            const currentScrollPos = window.scrollY;
+            setIsNavbarVisible(prevScrollPos > currentScrollPos || currentScrollPos < 50);
+            prevScrollPos = currentScrollPos;
+
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout);
+            }
+
+            scrollTimeout = setTimeout(() => {
+                setIsNavbarVisible(true);
+            }, 1000); // Scroll timeout in milliseconds
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
+    const handleOpenDialog = (image) => {
+        setSelectedImage(image);
+        setOpenDialog(true);
+    };
+
+    const handleCloseDialog = () => {
+        setOpenDialog(false);
+    };
+
+
     return (
-        <ParallaxProvider>
-            <div id="home" className={styles.container}>
-
-                <NavBar/>
-
-                {mounted && (
+        <div>
+            <ParallaxProvider>
+                <div id="home" className={homeStyles.container}>
+                    {isDesktop ? <DesktopNavBar isVisible={isNavbarVisible}/> :
+                        <MobileNavBar isVisible={isNavbarVisible}/>} {mounted && (
                     <>
                         <ParallaxBanner
                             layers={[
                                 {
-                                    image: `${process.env.NEXT_PUBLIC_BASE_PATH}/beach-hd.jpeg`,
+                                    children: (
+                                        <Image
+                                            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/beach-hd.jpeg`}
+                                            alt={"Beach"}
+                                            quality={100}
+                                            style={{objectFit: 'cover'}}
+                                            fill
+                                            priority
+                                        />
+                                    ),
                                     speed: -50
                                 }
                             ]}
-                            className={styles.parallaxBannerLight}
+                            className={homeStyles.parallaxBannerLight}
                         >
-                            <div className={styles.overlayContent}>
+                            <div id={"overlay"} className={homeStyles.overlayContent}>
                                 <h2>Ashley & Jon</h2>
-                                <h3>October 18, 2025</h3>
-                                <button className={styles.rsvpButton} onClick={() => {
+                                <h3>October 18, 2025<br/>Miramar Beach, Florida</h3>
+                                <button className={homeStyles.rsvpButton} onClick={() => {
                                     if (confirm("Download Calendar Invite?")) {
-                                        console.log("Canceling calendar invite");
+                                        console.log("Downloading calendar invite");
+                                        const link = document.createElement('a');
+                                        link.href = `${process.env.NEXT_PUBLIC_BASE_PATH}/atjh-ceremony-invite.ics`;
+                                        link.download = 'ashley-jon-wedding-ceremony-invite.ics';
+                                        link.target = '_blank';
+                                        document.body.appendChild(link);
+                                        link.click();
+                                        document.body.removeChild(link);
                                     } else {
                                         console.log("Canceling calendar invite");
                                     }
@@ -43,37 +155,132 @@ export default function Home() {
                                 </button>
                             </div>
                         </ParallaxBanner>
-
-                        <section id="event-details" className={styles.section}>
+                        <section id="event-details" className={homeStyles.section}>
+                            <h2>Details</h2>
                             <EventWrapper>
                                 <Event
-                                    eventName="Welcome Bonfire"
+                                    eventName="Welcome Beach Bonfire"
                                     eventDate="October 16, 2025"
                                     eventTime="5:00 PM CDT"
-                                    eventLocation="Miramar Beach, FL"
-                                    imageUrl={`${process.env.NEXT_PUBLIC_BASE_PATH}/placeholder200.png`}
+                                    eventLocation="Santa Rosa Beach, FL"
+                                    iframeSourceUrl="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2378.9886494098314!2d-86.36356978319068!3d30.374802699992255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1727637367196!5m2!1sen!2sus"
                                 />
-
                                 <Event
                                     eventName="Wedding Ceremony"
                                     eventDate="October 18, 2025"
                                     eventTime="4:00 PM CDT"
-                                    eventLocation="Miramar Beach, FL"
-                                    imageUrl={`${process.env.NEXT_PUBLIC_BASE_PATH}/placeholder200.png`}
+                                    eventLocation="158 Sandestin Blvd N, Miramar Beach, FL"
+                                    iframeSourceUrl="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1502.4508689669367!2d-86.33937748835919!3d30.384693598292856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1727637539114!5m2!1sen!2sus"
                                 />
-
                                 <Event
                                     eventName="Reception"
                                     eventDate="October 18, 2025"
                                     eventTime="4:30 PM CDT"
-                                    eventLocation="Miramar Beach, FL"
-                                    imageUrl={`${process.env.NEXT_PUBLIC_BASE_PATH}/placeholder200.png`}
+                                    eventLocation="158 Sandestin Blvd N, Miramar Beach, FL"
+                                    iframeSourceUrl="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1502.4508689669367!2d-86.33937748835919!3d30.384693598292856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1727637539114!5m2!1sen!2sus"
                                 />
                             </EventWrapper>
+                            <TextComponent>
+                                <h3>The Details (placeholder info)</h3>
+                                <div className={textStyles.contentContainer}>
+                                    <p>
+                                        Join us for a weekend of celebration in beautiful Santa Rosa Beach, Florida.
+                                        We can't wait to celebrate with you!
+                                        Here are some details to help you plan your trip:
+                                    </p>
+                                    <h4>Things to Do</h4>
+                                    <p>
+                                        <FaUmbrellaBeach/> Enjoy the stunning beaches<br/>
+                                        <FaBicycle/> Take a scenic bike ride along the 30A trail<br/>
+                                        <FaUtensils/> Explore the local shops and restaurants<br/>
+                                        <FaMapMarkerAlt/> Visit the nearby state parks and nature reserves<br/>
+                                        <FaMapMarkerAlt/> Go on a dolphin watching tour<br/>
+                                        <FaMapMarkerAlt/> Try out water sports like paddleboarding and kayaking
+                                    </p>
+                                    <h4>Where to Stay</h4>
+                                    <p>
+                                        <FaHotel/> WaterColor Inn<br/>
+                                        <FaHotel/> The Pearl Hotel<br/>
+                                        <FaHotel/> Beach house rentals through 360 Blue<br/>
+                                        <FaHotel/> Hilton Sandestin Beach Golf Resort & Spa<br/>
+                                        <FaHotel/> Courtyard by Marriott Sandestin at Grand Boulevard
+                                    </p>
+                                    <h4>Relevant Airports</h4>
+                                    <p>
+                                        <FaPlane/> Northwest Florida Beaches International Airport (ECP)<br/>
+                                        <FaPlane/> Destin-Fort Walton Beach Airport (VPS)<br/>
+                                        <FaPlane/> Pensacola International Airport (PNS)
+                                    </p>
+                                </div>
+                            </TextComponent>
+
+                        </section>
+                        <section id="gallery" className={homeStyles.section} style={{backgroundColor: "#F9F9F9"}}>
+                            <h2>Gallery</h2>
+                            <ImageList variant="masonry" cols={photoGalleryColumns} gap={10}>
+                                {pictureData.map((item) => (
+                                    <ImageListItem key={item.img} onClick={() => handleOpenDialog(item)}
+                                                   style={{cursor: 'pointer'}}
+                                    >
+                                        <img
+                                            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                                            src={`${item.img}?w=248&fit=crop&auto=format`}
+                                            alt={item.title}
+                                            loading="lazy"
+                                        />
+                                    </ImageListItem>
+                                ))}
+                            </ImageList>
+                            <Dialog
+                                open={openDialog}
+                                onClose={handleCloseDialog}
+                                maxWidth="xl"
+                                fullWidth
+                            >
+                                <IconButton
+                                    aria-label="close"
+                                    onClick={handleCloseDialog}
+                                    sx={{
+                                        position: 'absolute',
+                                        left: 8,
+                                        top: 8,
+                                        color: (theme) => theme.palette.grey[500],
+                                    }}
+                                >
+                                    <CloseIcon/>
+                                </IconButton>
+                                {selectedImage && (
+                                    <div style={{
+                                        width: '100%',
+                                        height: '90vh',
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center'
+                                    }}>
+                                        <img
+                                            src={selectedImage.img}
+                                            alt={selectedImage.title}
+                                            style={{
+                                                maxWidth: '100%',
+                                                maxHeight: '100%',
+                                                objectFit: 'contain'
+                                            }}
+                                        />
+                                    </div>
+                                )}
+                            </Dialog>
+                        </section>
+                        <section id="registry" className={homeStyles.section}>
+                            <h2>Registry</h2>
+                            <TextComponent>
+                                <h3>Details to come!</h3>
+                            </TextComponent>
                         </section>
                     </>
                 )}
-            </div>
-        </ParallaxProvider>
+                </div>
+            </ParallaxProvider>
+            <Footer/>
+        </div>
     );
 }

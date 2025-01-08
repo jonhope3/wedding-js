@@ -1,6 +1,6 @@
 // Event.module.scss
-@import "fonts";
-@import "variables";
+@use "fonts";
+@use "variables";
 
 .event {
   font-family: 'Sofia Sans Condensed', sans-serif;
@@ -20,28 +20,34 @@
     margin-top: 0;
   }
 
-  @media (min-width: $min-width-desktop) {
+  @media (min-width: variables.$desktop-size) {
     flex-direction: row; // Switch to row for larger screens
     align-items: center;
   }
 }
 
 .eventImageContainer {
-  width: 100%;
+  display: flex;
+  height: 250px;
   margin-bottom: 10px;
+  margin-right: 0;
+  justify-content: center; // Center horizontally
+  align-items: center; // Center vertically
 
-  @media (min-width: $min-width-desktop) {
-    width: 200px;
-    margin-right: 20px;
+  @media (min-width: variables.$desktop-size) {
     margin-bottom: 0;
   }
 }
 
-.eventImage {
+.iframeWrapper {
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+  height: 100%; /* Ensure the parent container has a defined height */
+}
+
+.iframeWrapper iframe {
   width: 100%;
-  height: auto;
-  border-radius: 4px;
-  object-fit: cover;
+  height: 100%;
+  border: 0;
 }
 
 .eventDetails {
@@ -49,7 +55,7 @@
   margin-bottom: 20px; /* Add space below event details */
 }
 
-@media (min-width: $min-width-desktop) {
+@media (min-width: variables.$desktop-size) {
   .eventDetails {
     margin-bottom: 0;
     margin-right: 20px; /* Add space to the right of event details for larger screens */
