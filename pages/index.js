@@ -193,7 +193,7 @@ export default function Home() {
                                         Here are some details to help you plan your trip:
                                     </ul>
                                     <h4>Things to Do</h4>
-                                    <ul style={{listStyleType: 'none'}}>
+                                    <ul style={{listStyleType: 'none', padding: '1rem'}}>
                                         <li><FaUmbrellaBeach/> Enjoy the stunning beaches of the Emerald Coast</li>
                                         <li><FaFish/> Try your luck fishing in Destin, "The World's Luckiest Fishing
                                             Village"
@@ -205,25 +205,26 @@ export default function Home() {
                                         <li><MdSurfing/> Try out water sports like paddleboarding and kayaking</li>
                                     </ul>
                                     <h4>Where to Stay</h4>
-                                    <ul style={{listStyleType: 'none'}}>
+                                    <ul style={{listStyleType: 'none', padding: '1rem'}}>
                                         <li><LuHouse/> Sandestin Golf & Beach Resort</li>
                                         <li><LuHouse/> Beach house rentals</li>
-                                        <ul>
+                                        <ul style={{paddingLeft: '2rem'}}>
                                             <li>Consider renting a place through Airbnb, VRBO, Vacasa, or similar</li>
-                                            <li>Some areas to search are Miramar Beach, Santa Rosa Beach, and Destin</li>
+                                            <li>Some areas to search are Miramar Beach, Santa Rosa Beach, and Destin
+                                            </li>
                                         </ul>
                                         <li><LuHotel/> Hilton Sandestin Beach Golf Resort & Spa</li>
                                         <li><LuHotel/> Courtyard by Marriott Sandestin at Grand Boulevard</li>
                                         <li><LuHotel/> Hotel Effie Sandestin</li>
                                     </ul>
                                     <h4>Nearby Airports</h4>
-                                    <ul style={{listStyleType: 'none'}}>
+                                    <ul style={{listStyleType: 'none', padding: '1rem' }}>
                                         <li><FaPlane/> Destin-Fort Walton Beach Airport (VPS)</li>
-                                        <ul style={{listStyleType: 'none'}}>
+                                        <ul style={{listStyleType: 'none', paddingLeft: '2rem'}}>
                                             VPS is ~45 minutes from the wedding venue
                                         </ul>
                                         <li><FaPlane/> Panama City Beach Airport (ECP)</li>
-                                        <ul style={{listStyleType: 'none'}}>
+                                        <ul style={{listStyleType: 'none', paddingLeft: '2rem'}}>
                                             ECP is ~45 minutes from the wedding venue
                                         </ul>
                                     </ul>
