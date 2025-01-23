@@ -1,7 +1,6 @@
 import styles from "../styles/Event.module.scss";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faCalendar, faClock} from '@fortawesome/free-regular-svg-icons';
-import {faLocationDot} from '@fortawesome/free-solid-svg-icons';
+import {FaRegCalendar, FaRegClock} from 'react-icons/fa';
+import {PiMapPinBold} from "react-icons/pi";
 
 
 const Event = ({eventName, eventDate, eventTime, eventLocation, iframeSourceUrl}) => {
@@ -10,13 +9,13 @@ const Event = ({eventName, eventDate, eventTime, eventLocation, iframeSourceUrl}
             <div className={styles.eventDetails}>
                 <h3>{eventName}</h3>
                 <p>
-                    <FontAwesomeIcon icon={faCalendar} style={{marginRight: '4px'}}/> {eventDate}
+                    <FaRegCalendar style={{marginRight: '4px'}}/> {eventDate}
                 </p>
                 <p>
-                    <FontAwesomeIcon icon={faClock} style={{marginRight: '4px'}}/> {eventTime}
+                    <FaRegClock style={{marginRight: '4px'}}/> {eventTime}
                 </p>
                 <p>
-                    <FontAwesomeIcon icon={faLocationDot} style={{marginRight: '4px'}}/> {eventLocation}
+                    <PiMapPinBold style={{marginRight: '4px'}}/> {eventLocation}
                 </p>
             </div>
             {iframeSourceUrl && (

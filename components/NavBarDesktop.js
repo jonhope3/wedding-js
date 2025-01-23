@@ -1,6 +1,6 @@
-import styles from "../styles/DesktopNavBar.module.scss";
+import styles from "../styles/NavBarDesktop.module.scss";
 
-function DesktopNavBar({isVisible}) {
+function NavBarDesktop({isVisible}) {
     return (
         <nav className={`${styles.nav} ${isVisible ? '' : styles.hidden}`}>
             <ul>
@@ -13,4 +13,4 @@ function DesktopNavBar({isVisible}) {
     );
 }
 
-export default DesktopNavBar;
+export default NavBarDesktop;

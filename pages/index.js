@@ -2,16 +2,16 @@ import {useEffect, useState} from 'react';
 import Image from 'next/image';
 import {ParallaxBanner, ParallaxProvider} from 'react-scroll-parallax';
 import homeStyles from '../styles/Home.module.scss';
-import textStyles from '../styles/TextComponent.module.scss';
-import DesktopNavBar from "../components/DesktopNavBar";
+import textStyles from '../styles/TextSection.module.scss';
+import eventStyles from '../styles/Event.module.scss';
+import NavBarDesktop from "../components/NavBarDesktop";
 import Event from "../components/EventComponent";
-import EventWrapper from "../components/EventWrapper";
-import TextComponent from "../components/TextComponent";
+import TextSection from "../components/TextSection";
 import Footer from "../components/Footer";
 import {FaBicycle, FaHotel, FaMapMarkerAlt, FaPlane, FaUmbrellaBeach, FaUtensils} from 'react-icons/fa';
 import {Dialog, IconButton, ImageList, ImageListItem, useMediaQuery} from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
-import MobileNavBar from "../components/MobileNavBar";
+import NavBarMobile from "../components/NavBarMobile";
 
 export default function Home() {
     const [mounted, setMounted] = useState(false);
@@ -113,8 +113,8 @@ export default function Home() {
         <div>
             <ParallaxProvider>
                 <div id="home" className={homeStyles.container}>
-                    {isDesktop ? <DesktopNavBar isVisible={isNavbarVisible}/> :
-                        <MobileNavBar isVisible={isNavbarVisible}/>} {mounted && (
+                    {isDesktop ? <NavBarDesktop isVisible={isNavbarVisible}/> :
+                        <NavBarMobile isVisible={isNavbarVisible}/>} {mounted && (
                     <>
                         <ParallaxBanner
                             layers={[
@@ -157,7 +157,7 @@ export default function Home() {
                         </ParallaxBanner>
                         <section id="event-details" className={homeStyles.section}>
                             <h2>Details</h2>
-                            <EventWrapper>
+                            <div id={"event-wrapper"} className={eventStyles.eventWrapper}>
                                 <Event
                                     eventName="Welcome Beach Bonfire"
                                     eventDate="October 16, 2025"
@@ -179,9 +179,9 @@ export default function Home() {
                                     eventLocation="158 Sandestin Blvd N, Miramar Beach, FL"
                                     iframeSourceUrl="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1502.4508689669367!2d-86.33937748835919!3d30.384693598292856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1727637539114!5m2!1sen!2sus"
                                 />
-                            </EventWrapper>
-                            <TextComponent>
-                                <h3>The Details (placeholder info)</h3>
+                            </div>
+                            <TextSection>
+                            <h3>The Details (placeholder info)</h3>
                                 <div className={textStyles.contentContainer}>
                                     <p>
                                         Join us for a weekend of celebration in beautiful Santa Rosa Beach, Florida.
@@ -212,7 +212,7 @@ export default function Home() {
                                         <FaPlane/> Pensacola International Airport (PNS)
                                     </p>
                                 </div>
-                            </TextComponent>
+                            </TextSection>
 
                         </section>
                         <section id="gallery" className={homeStyles.section} style={{backgroundColor: "#F9F9F9"}}>
@@ -236,6 +236,11 @@ export default function Home() {
                                 onClose={handleCloseDialog}
                                 maxWidth="xl"
                                 fullWidth
+                                PaperProps={{
+                                    style: {
+                                        backgroundColor: 'rgba(25, 25, 25, 0.9)', // Translucent gray background
+                                    },
+                                }}
                             >
                                 <IconButton
                                     aria-label="close"
@@ -251,18 +256,18 @@ export default function Home() {
                                 </IconButton>
                                 {selectedImage && (
                                     <div style={{
-                                        width: '100%',
-                                        height: '90vh',
                                         display: 'flex',
                                         justifyContent: 'center',
-                                        alignItems: 'center'
+                                        alignItems: 'center',
+                                        width: '100%',
+                                        height: '100%'
                                     }}>
                                         <img
                                             src={selectedImage.img}
                                             alt={selectedImage.title}
                                             style={{
-                                                maxWidth: '100%',
-                                                maxHeight: '100%',
+                                                width: '90vw',
+                                                height: '90vh',
                                                 objectFit: 'contain'
                                             }}
                                         />
@@ -272,9 +277,9 @@ export default function Home() {
                         </section>
                         <section id="registry" className={homeStyles.section}>
                             <h2>Registry</h2>
-                            <TextComponent>
+                            <TextSection>
                                 <h3>Details to come!</h3>
-                            </TextComponent>
+                            </TextSection>
                         </section>
                     </>
                 )}

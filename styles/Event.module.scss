@@ -2,6 +2,15 @@
 @use "fonts";
 @use "variables";
 
+.eventWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  align-content: flex-start;
+}
+
 .event {
   font-family: 'Sofia Sans Condensed', sans-serif;
   font-size: 1.25em;

@@ -12,9 +12,9 @@ import EventIcon from '@mui/icons-material/Event';
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 import MenuIcon from '@mui/icons-material/Menu';
-import styles from '../styles/MobileNavBar.module.scss';
+import styles from '../styles/NavBarMobile.module.scss';
 
-export default function MobileNavBar({ isVisible }) {
+export default function NavBarMobile({ isVisible }) {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleDrawer = (open) => (event) => {
