@@ -8,10 +8,14 @@ import NavBarDesktop from "../components/NavBarDesktop";
 import Event from "../components/EventComponent";
 import TextSection from "../components/TextSection";
 import Footer from "../components/Footer";
-import {FaBicycle, FaHotel, FaMapMarkerAlt, FaPlane, FaUmbrellaBeach, FaUtensils} from 'react-icons/fa';
+import {FaBicycle, FaMapMarkerAlt, FaPlane, FaUmbrellaBeach, FaUtensils} from 'react-icons/fa';
 import {Dialog, IconButton, ImageList, ImageListItem, useMediaQuery} from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 import NavBarMobile from "../components/NavBarMobile";
+import {LuHotel, LuHouse} from "react-icons/lu";
+import {FaFish} from "react-icons/fa6";
+import {GiDolphin} from "react-icons/gi";
+import {MdSurfing} from "react-icons/md";
 
 export default function Home() {
     const [mounted, setMounted] = useState(false);
@@ -181,36 +185,48 @@ export default function Home() {
                                 />
                             </div>
                             <TextSection>
-                            <h3>The Details (placeholder info)</h3>
+                                <h3>The Details</h3>
                                 <div className={textStyles.contentContainer}>
-                                    <p>
+                                    <ul>
                                         Join us for a weekend of celebration in beautiful Santa Rosa Beach, Florida.
                                         We can't wait to celebrate with you!
                                         Here are some details to help you plan your trip:
-                                    </p>
+                                    </ul>
                                     <h4>Things to Do</h4>
-                                    <p>
-                                        <FaUmbrellaBeach/> Enjoy the stunning beaches<br/>
-                                        <FaBicycle/> Take a scenic bike ride along the 30A trail<br/>
-                                        <FaUtensils/> Explore the local shops and restaurants<br/>
-                                        <FaMapMarkerAlt/> Visit the nearby state parks and nature reserves<br/>
-                                        <FaMapMarkerAlt/> Go on a dolphin watching tour<br/>
-                                        <FaMapMarkerAlt/> Try out water sports like paddleboarding and kayaking
-                                    </p>
+                                    <ul style={{listStyleType: 'none'}}>
+                                        <li><FaUmbrellaBeach/> Enjoy the stunning beaches of the Emerald Coast</li>
+                                        <li><FaFish/> Try your luck fishing in Destin, "The World's Luckiest Fishing
+                                            Village"
+                                        </li>
+                                        <li><FaBicycle/> Take a scenic bike ride along the 30A trail</li>
+                                        <li><FaUtensils/> Explore the local shops and restaurants</li>
+                                        <li><FaMapMarkerAlt/> Visit the nearby state parks and nature reserves</li>
+                                        <li><GiDolphin/> Go on a dolphin watching tour</li>
+                                        <li><MdSurfing/> Try out water sports like paddleboarding and kayaking</li>
+                                    </ul>
                                     <h4>Where to Stay</h4>
-                                    <p>
-                                        <FaHotel/> WaterColor Inn<br/>
-                                        <FaHotel/> The Pearl Hotel<br/>
-                                        <FaHotel/> Beach house rentals through 360 Blue<br/>
-                                        <FaHotel/> Hilton Sandestin Beach Golf Resort & Spa<br/>
-                                        <FaHotel/> Courtyard by Marriott Sandestin at Grand Boulevard
-                                    </p>
-                                    <h4>Relevant Airports</h4>
-                                    <p>
-                                        <FaPlane/> Northwest Florida Beaches International Airport (ECP)<br/>
-                                        <FaPlane/> Destin-Fort Walton Beach Airport (VPS)<br/>
-                                        <FaPlane/> Pensacola International Airport (PNS)
-                                    </p>
+                                    <ul style={{listStyleType: 'none'}}>
+                                        <li><LuHouse/> Sandestin Golf & Beach Resort</li>
+                                        <li><LuHouse/> Beach house rentals</li>
+                                        <ul>
+                                            <li>Consider renting a place through Airbnb, VRBO, Vacasa, or similar</li>
+                                            <li>Some areas to search are Miramar Beach, Santa Rosa Beach, and Destin</li>
+                                        </ul>
+                                        <li><LuHotel/> Hilton Sandestin Beach Golf Resort & Spa</li>
+                                        <li><LuHotel/> Courtyard by Marriott Sandestin at Grand Boulevard</li>
+                                        <li><LuHotel/> Hotel Effie Sandestin</li>
+                                    </ul>
+                                    <h4>Nearby Airports</h4>
+                                    <ul style={{listStyleType: 'none'}}>
+                                        <li><FaPlane/> Destin-Fort Walton Beach Airport (VPS)</li>
+                                        <ul style={{listStyleType: 'none'}}>
+                                            VPS is ~45 minutes from the wedding venue
+                                        </ul>
+                                        <li><FaPlane/> Panama City Beach Airport (ECP)</li>
+                                        <ul style={{listStyleType: 'none'}}>
+                                            ECP is ~45 minutes from the wedding venue
+                                        </ul>
+                                    </ul>
                                 </div>
                             </TextSection>
 
