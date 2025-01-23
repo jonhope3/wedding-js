@@ -28,11 +28,6 @@
   opacity: 0.85;
 }
 
-.parallaxBannerLightSmall {
-  height: 50vh;
-  opacity: 0.85;
-}
-
 .main {
   height: 100%;
   display: flex;
@@ -120,6 +115,10 @@
 
   // Laptop size
   @media (min-width: variables.$desktop-size) {
+    font-size: 4rem;
+  }
+
+  @media (min-width: 1200px) {
     font-size: 5rem;
   }
 
