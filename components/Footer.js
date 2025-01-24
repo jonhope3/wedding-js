@@ -9,13 +9,13 @@ export default function Footer() {
         setOpen(true);
         setTimeout(() => {
             setOpen(false);
-        }, 500);
+        }, 750);
     };
 
     return (
-        <footer className={styles.footer}>
+        <footer className={styles.footer} onClick={handleClick} style={{cursor: 'pointer'}}>
             <p>
-                Made with <span onClick={handleClick} style={{cursor: 'pointer'}}>💙</span> by Jon & Ashley
+                Made with <span>💙</span> by Jon & Ashley
             </p>
             <Dialog open={open} onClose={() => setOpen(false)}>
                 <DialogContent>
