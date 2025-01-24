@@ -24,57 +24,78 @@ export default function Home() {
     const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 
     const isDesktop = useMediaQuery('(min-width:768px)');
-    const photoGalleryColumns = isDesktop ? 5 : 3;
+    const photoGalleryColumns = isDesktop ? 4 : 3;
     const pictureData = [
-        // {
-        //     img: `${process.env.NEXT_PUBLIC_BASE_PATH}/beach-hd.jpeg`,
-        //     title: 'Bed',
-        // },
-        {
-            img: 'https://images.unsplash.com/photo-1525097487452-6278ff080c31',
-            title: 'Books',
-        },
-        {
-            img: 'https://images.unsplash.com/photo-1523413651479-597eb2da0ad6',
-            title: 'Sink',
-        },
-        {
-            img: 'https://images.unsplash.com/photo-1563298723-dcfebaa392e3',
-            title: 'Kitchen',
-        },
         {
             img: `${process.env.NEXT_PUBLIC_BASE_PATH}/ring-photo.jpeg`,
             title: 'Blinds',
         },
         {
-            img: 'https://images.unsplash.com/photo-1574180045827-681f8a1a9622',
-            title: 'Chairs',
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/cruise.jpg`,
+            title: 'Cruise',
         },
         {
-            img: 'https://images.unsplash.com/photo-1530731141654-5993c3016c77',
-            title: 'Laptop',
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/destin.jpg`,
+            title: 'Destin',
         },
         {
-            img: 'https://images.unsplash.com/photo-1481277542470-605612bd2d61',
-            title: 'Doors',
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/mckinney.jpg`,
+            title: 'McKinney',
+        },
+
+        {
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/telluride.jpg`,
+            title: 'Telluride',
         },
         {
-            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/beach-hd.jpeg`,
-            title: 'Coffee',
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/winter-games.jpg`,
+            title: 'Winter Games Okoboji',
         },
         {
-            img: 'https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee',
-            title: 'Storage',
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/destin2.jpg`,
+            title: 'Miramar Beach',
         },
         {
-            img: 'https://images.unsplash.com/photo-1597262975002-c5c3b14bbd62',
-            title: 'Candle',
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/destin3.jpg`,
+            title: 'Gulf',
         },
         {
-            img: 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4',
-            title: 'Coffee table',
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/islamorada.jpg`,
+            title: 'Islamorada',
         },
+        {
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/engagement.jpg`,
+            title: 'Engagement Picture',
+        },
+        {
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/engagement1.jpg`,
+            title: 'Engagement Picture',
+        },
+        {
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/engagement2.jpg`,
+            title: 'Engagement Picture',
+        },
+        {
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/proposal.jpg`,
+            title: 'Proposal Picture',
+        },
+        {
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/proposal1.jpg`,
+            title: 'Proposal Picture',
+        }
     ];
+    const [shuffledPictureData, setShuffledPictureData] = useState([]);
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    useEffect(() => {
+        setShuffledPictureData(shuffleArray([...pictureData]));
+    }, []);
 
     useEffect(() => {
         setMounted(true);
@@ -235,10 +256,8 @@ export default function Home() {
                         <section id="gallery" className={homeStyles.section} style={{backgroundColor: "#F9F9F9"}}>
                             <h2>Gallery</h2>
                             <ImageList variant="masonry" cols={photoGalleryColumns} gap={10}>
-                                {pictureData.map((item) => (
-                                    <ImageListItem key={item.img} onClick={() => handleOpenDialog(item)}
-                                                   style={{cursor: 'pointer'}}
-                                    >
+                                {shuffledPictureData.map((item) => (
+                                    <ImageListItem key={item.img} onClick={() => handleOpenDialog(item)} style={{ cursor: 'pointer' }}>
                                         <img
                                             srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                                             src={`${item.img}?w=248&fit=crop&auto=format`}
