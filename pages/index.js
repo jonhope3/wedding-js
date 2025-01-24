@@ -14,7 +14,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import NavBarMobile from "../components/NavBarMobile";
 import {LuHotel, LuHouse} from "react-icons/lu";
 import {FaFish} from "react-icons/fa6";
-import {GiDolphin} from "react-icons/gi";
+import {GiDolphin, GiPalmTree} from "react-icons/gi";
 import {MdSurfing} from "react-icons/md";
 
 export default function Home() {
@@ -221,7 +221,7 @@ export default function Home() {
                                         </li>
                                         <li><FaBicycle/> Take a scenic bike ride along the 30A trail</li>
                                         <li><FaUtensils/> Explore the local shops and restaurants</li>
-                                        <li><FaMapMarkerAlt/> Visit the nearby state parks and nature reserves</li>
+                                        <li><GiPalmTree/> Visit the nearby state parks and nature reserves</li>
                                         <li><GiDolphin/> Go on a dolphin watching tour</li>
                                         <li><MdSurfing/> Try out water sports like paddleboarding and kayaking</li>
                                     </ul>

@@ -21,7 +21,7 @@ export default function MyApp({Component, pageProps}) {
                 <meta property="og:description"
                       content="Welcome to our wedding website! Oct. 18 2025 is the day - can't wait to see you there!"/>
                 <meta property="og:image"
-                      content="https://github.com/jonhope3/wedding-js/blob/main/public/ring-photo.jpeg"/>
+                      content="https://github.com/jonhope3/wedding-js/blob/main/public/ring-photo-og.png?raw=true"/>
                 <meta property="og:url" content="https://wedding.ashandjon.com"/>
                 <meta property="og:type" content="website"/>
             </Head>
