@@ -12,6 +12,9 @@ import EventIcon from '@mui/icons-material/Event';
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 import MenuIcon from '@mui/icons-material/Menu';
+import PlaceIcon from '@mui/icons-material/Place';
+import FlightIcon from '@mui/icons-material/Flight';
+import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 import styles from '../styles/NavBarMobile.module.scss';
 
 export default function NavBarMobile({isVisible}) {
@@ -34,16 +37,30 @@ export default function NavBarMobile({isVisible}) {
             <List>
                 {[
                     {text: 'Home', icon: <HomeIcon/>, link: '#home'},
-                    {text: 'Details', icon: <EventIcon/>, link: '#event-details'},
+                    {text: 'Details', icon: <EventIcon/>, link: '#event-details', subsections: [
+                            {text: 'Things to Do', icon: <BeachAccessIcon/>, link: '#things-to-do'},
+                            {text: 'Where to Stay', icon: <PlaceIcon/>, link: '#where-to-stay'},
+                            {text: 'Airports', icon: <FlightIcon/>, link: '#airports'}
+                        ]},
                     {text: 'Gallery', icon: <PhotoLibraryIcon/>, link: '#gallery'},
                     {text: 'Registry', icon: <CardGiftcardIcon/>, link: '#registry'}
                 ].map((item) => (
-                    <ListItem key={item.text} disablePadding>
-                        <ListItemButton component="a" href={item.link}>
-                            <ListItemIcon>{item.icon}</ListItemIcon>
-                            <ListItemText primary={item.text}/>
-                        </ListItemButton>
-                    </ListItem>
+                    <React.Fragment key={item.text}>
+                        <ListItem disablePadding>
+                            <ListItemButton component="a" href={item.link}>
+                                <ListItemIcon>{item.icon}</ListItemIcon>
+                                <ListItemText primary={item.text}/>
+                            </ListItemButton>
+                        </ListItem>
+                        {item.subsections && item.subsections.map((subitem) => (
+                            <ListItem key={subitem.text} disablePadding sx={{pl: 4}}>
+                                <ListItemButton component="a" href={subitem.link}>
+                                    <ListItemIcon>{subitem.icon}</ListItemIcon>
+                                    <ListItemText primary={subitem.text}/>
+                                </ListItemButton>
+                            </ListItem>
+                        ))}
+                    </React.Fragment>
                 ))}
             </List>
         </Box>

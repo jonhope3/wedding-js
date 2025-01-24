@@ -178,7 +178,7 @@ export default function Home() {
                                 </button>
                             </div>
                         </ParallaxBanner>
-                        <section id="event-details" className={homeStyles.section}>
+                        <section id="event-details" className={homeStyles.section} style={{marginBottom: '2rem'}}>
                             <h2>Details</h2>
                             <div id={"event-wrapper"} className={eventStyles.eventWrapper}>
                                 <Event
@@ -211,7 +211,7 @@ export default function Home() {
                                         We can't wait to celebrate with you!
                                         Here are some details to help you plan your trip:
                                     </ul>
-                                    <h4>Things to Do</h4>
+                                    <h4 id={'things-to-do'}>Things to Do</h4>
                                     <ul style={{listStyleType: 'none', padding: '1rem', lineHeight: '2.5rem'}}>
                                         <li><FaUmbrellaBeach style={{marginRight: '.5rem'}}/> Enjoy the stunning beaches of the Emerald Coast</li>
                                         <li><FaFish style={{marginRight: '.5rem'}} /> Try your luck fishing in Destin, "The World's Luckiest Fishing
@@ -223,7 +223,7 @@ export default function Home() {
                                         <li><GiDolphin style={{marginRight: '.5rem'}}/> Go on a dolphin watching tour</li>
                                         <li><MdSurfing style={{marginRight: '.5rem'}}/> Try out water sports like paddleboarding and kayaking</li>
                                     </ul>
-                                    <h4>Where to Stay</h4>
+                                    <h4 id={'where-to-stay'}>Where to Stay</h4>
                                     <ul style={{listStyleType: 'none', padding: '1rem', lineHeight: '2.5rem'}}>
                                         <li><LuHouse style={{marginRight: '.5rem'}}/> Sandestin Golf & Beach Resort</li>
                                         <li><LuHouse style={{marginRight: '.5rem'}}/> Beach house rentals</li>
@@ -236,7 +236,7 @@ export default function Home() {
                                         <li><LuHotel style={{marginRight: '.5rem'}}/> Courtyard by Marriott Sandestin at Grand Boulevard</li>
                                         <li><LuHotel style={{marginRight: '.5rem'}}/> Hotel Effie Sandestin</li>
                                     </ul>
-                                    <h4>Nearby Airports</h4>
+                                    <h4 id={'airports'}>Nearby Airports</h4>
                                     <ul style={{listStyleType: 'none', padding: '1rem', lineHeight: '2.5rem'}}>
                                         <li><FaPlane style={{marginRight: '.5rem'}}/> Destin-Fort Walton Beach Airport (VPS)</li>
                                         <ul style={{listStyleType: 'none', paddingLeft: '2rem'}}>
