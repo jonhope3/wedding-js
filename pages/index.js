@@ -8,7 +8,7 @@ import NavBarDesktop from "../components/NavBarDesktop";
 import Event from "../components/EventComponent";
 import TextSection from "../components/TextSection";
 import Footer from "../components/Footer";
-import {FaBicycle, FaMapMarkerAlt, FaPlane, FaUmbrellaBeach, FaUtensils} from 'react-icons/fa';
+import {FaBicycle, FaPlane, FaUmbrellaBeach, FaUtensils} from 'react-icons/fa';
 import {Dialog, IconButton, ImageList, ImageListItem, useMediaQuery} from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 import NavBarMobile from "../components/NavBarMobile";
@@ -85,6 +85,7 @@ export default function Home() {
         }
     ];
     const [shuffledPictureData, setShuffledPictureData] = useState([]);
+
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -214,7 +215,7 @@ export default function Home() {
                                         Here are some details to help you plan your trip:
                                     </ul>
                                     <h4>Things to Do</h4>
-                                    <ul style={{listStyleType: 'none', padding: '1rem', lineHeight:'2.5rem'}}>
+                                    <ul style={{listStyleType: 'none', padding: '1rem', lineHeight: '2.5rem'}}>
                                         <li><FaUmbrellaBeach/> Enjoy the stunning beaches of the Emerald Coast</li>
                                         <li><FaFish/> Try your luck fishing in Destin, "The World's Luckiest Fishing
                                             Village"
@@ -226,7 +227,7 @@ export default function Home() {
                                         <li><MdSurfing/> Try out water sports like paddleboarding and kayaking</li>
                                     </ul>
                                     <h4>Where to Stay</h4>
-                                    <ul style={{listStyleType: 'none', padding: '1rem', lineHeight:'2.5rem'}}>
+                                    <ul style={{listStyleType: 'none', padding: '1rem', lineHeight: '2.5rem'}}>
                                         <li><LuHouse/> Sandestin Golf & Beach Resort</li>
                                         <li><LuHouse/> Beach house rentals</li>
                                         <ul style={{paddingLeft: '2rem'}}>
@@ -239,7 +240,7 @@ export default function Home() {
                                         <li><LuHotel/> Hotel Effie Sandestin</li>
                                     </ul>
                                     <h4>Nearby Airports</h4>
-                                    <ul style={{listStyleType: 'none', padding: '1rem', lineHeight:'2.5rem'}}>
+                                    <ul style={{listStyleType: 'none', padding: '1rem', lineHeight: '2.5rem'}}>
                                         <li><FaPlane/> Destin-Fort Walton Beach Airport (VPS)</li>
                                         <ul style={{listStyleType: 'none', paddingLeft: '2rem'}}>
                                             VPS is ~45 minutes from the wedding venue
@@ -257,7 +258,8 @@ export default function Home() {
                             <h2>Gallery</h2>
                             <ImageList variant="masonry" cols={photoGalleryColumns} gap={10}>
                                 {shuffledPictureData.map((item) => (
-                                    <ImageListItem key={item.img} onClick={() => handleOpenDialog(item)} style={{ cursor: 'pointer' }}>
+                                    <ImageListItem key={item.img} onClick={() => handleOpenDialog(item)}
+                                                   style={{cursor: 'pointer'}}>
                                         <img
                                             srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                                             src={`${item.img}?w=248&fit=crop&auto=format`}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
@@ -14,7 +14,7 @@ import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 import MenuIcon from '@mui/icons-material/Menu';
 import styles from '../styles/NavBarMobile.module.scss';
 
-export default function NavBarMobile({ isVisible }) {
+export default function NavBarMobile({isVisible}) {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleDrawer = (open) => (event) => {
@@ -26,22 +26,22 @@ export default function NavBarMobile({ isVisible }) {
 
     const list = (
         <Box
-            sx={{ width: 250 }}
+            sx={{width: 250}}
             role="presentation"
             onClick={toggleDrawer(false)}
             onKeyDown={toggleDrawer(false)}
         >
             <List>
                 {[
-                    { text: 'Home', icon: <HomeIcon />, link: '#home' },
-                    { text: 'Details', icon: <EventIcon />, link: '#event-details' },
-                    { text: 'Gallery', icon: <PhotoLibraryIcon />, link: '#gallery' },
-                    { text: 'Registry', icon: <CardGiftcardIcon />, link: '#registry' }
+                    {text: 'Home', icon: <HomeIcon/>, link: '#home'},
+                    {text: 'Details', icon: <EventIcon/>, link: '#event-details'},
+                    {text: 'Gallery', icon: <PhotoLibraryIcon/>, link: '#gallery'},
+                    {text: 'Registry', icon: <CardGiftcardIcon/>, link: '#registry'}
                 ].map((item) => (
                     <ListItem key={item.text} disablePadding>
                         <ListItemButton component="a" href={item.link}>
                             <ListItemIcon>{item.icon}</ListItemIcon>
-                            <ListItemText primary={item.text} />
+                            <ListItemText primary={item.text}/>
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -58,7 +58,7 @@ export default function NavBarMobile({ isVisible }) {
                 onClick={toggleDrawer(true)}
                 className={styles.menuButton}
             >
-                <MenuIcon />
+                <MenuIcon/>
             </IconButton>
             <Drawer
                 anchor="right"
