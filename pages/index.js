@@ -96,9 +96,6 @@ export default function Home() {
 
     useEffect(() => {
         setShuffledPictureData(shuffleArray([...pictureData]));
-    }, []);
-
-    useEffect(() => {
         setMounted(true);
 
         let prevScrollPos = window.scrollY;
@@ -216,36 +213,36 @@ export default function Home() {
                                     </ul>
                                     <h4>Things to Do</h4>
                                     <ul style={{listStyleType: 'none', padding: '1rem', lineHeight: '2.5rem'}}>
-                                        <li><FaUmbrellaBeach/> Enjoy the stunning beaches of the Emerald Coast</li>
-                                        <li><FaFish/> Try your luck fishing in Destin, "The World's Luckiest Fishing
+                                        <li><FaUmbrellaBeach style={{marginRight: '.5rem'}}/> Enjoy the stunning beaches of the Emerald Coast</li>
+                                        <li><FaFish style={{marginRight: '.5rem'}} /> Try your luck fishing in Destin, "The World's Luckiest Fishing
                                             Village"
                                         </li>
-                                        <li><FaBicycle/> Take a scenic bike ride along the 30A trail</li>
-                                        <li><FaUtensils/> Explore the local shops and restaurants</li>
-                                        <li><GiPalmTree/> Visit the nearby state parks and nature reserves</li>
-                                        <li><GiDolphin/> Go on a dolphin watching tour</li>
-                                        <li><MdSurfing/> Try out water sports like paddleboarding and kayaking</li>
+                                        <li><FaBicycle style={{marginRight: '.5rem'}}/> Take a scenic bike ride along the 30A trail</li>
+                                        <li><FaUtensils style={{marginRight: '.5rem'}}/> Explore the local shops and restaurants</li>
+                                        <li><GiPalmTree style={{marginRight: '.5rem'}}/> Visit the nearby state parks and nature reserves</li>
+                                        <li><GiDolphin style={{marginRight: '.5rem'}}/> Go on a dolphin watching tour</li>
+                                        <li><MdSurfing style={{marginRight: '.5rem'}}/> Try out water sports like paddleboarding and kayaking</li>
                                     </ul>
                                     <h4>Where to Stay</h4>
                                     <ul style={{listStyleType: 'none', padding: '1rem', lineHeight: '2.5rem'}}>
-                                        <li><LuHouse/> Sandestin Golf & Beach Resort</li>
-                                        <li><LuHouse/> Beach house rentals</li>
+                                        <li><LuHouse style={{marginRight: '.5rem'}}/> Sandestin Golf & Beach Resort</li>
+                                        <li><LuHouse style={{marginRight: '.5rem'}}/> Beach house rentals</li>
                                         <ul style={{paddingLeft: '2rem'}}>
                                             <li>Consider renting a place through Airbnb, VRBO, Vacasa, or similar</li>
                                             <li>Some areas to search are Miramar Beach, Santa Rosa Beach, and Destin
                                             </li>
                                         </ul>
-                                        <li><LuHotel/> Hilton Sandestin Beach Golf Resort & Spa</li>
-                                        <li><LuHotel/> Courtyard by Marriott Sandestin at Grand Boulevard</li>
-                                        <li><LuHotel/> Hotel Effie Sandestin</li>
+                                        <li><LuHotel style={{marginRight: '.5rem'}}/> Hilton Sandestin Beach Golf Resort & Spa</li>
+                                        <li><LuHotel style={{marginRight: '.5rem'}}/> Courtyard by Marriott Sandestin at Grand Boulevard</li>
+                                        <li><LuHotel style={{marginRight: '.5rem'}}/> Hotel Effie Sandestin</li>
                                     </ul>
                                     <h4>Nearby Airports</h4>
                                     <ul style={{listStyleType: 'none', padding: '1rem', lineHeight: '2.5rem'}}>
-                                        <li><FaPlane/> Destin-Fort Walton Beach Airport (VPS)</li>
+                                        <li><FaPlane style={{marginRight: '.5rem'}}/> Destin-Fort Walton Beach Airport (VPS)</li>
                                         <ul style={{listStyleType: 'none', paddingLeft: '2rem'}}>
                                             VPS is ~45 minutes from the wedding venue
                                         </ul>
-                                        <li><FaPlane/> Panama City Beach Airport (ECP)</li>
+                                        <li><FaPlane style={{marginRight: '.5rem'}}/> Panama City Beach Airport (ECP)</li>
                                         <ul style={{listStyleType: 'none', paddingLeft: '2rem'}}>
                                             ECP is ~45 minutes from the wedding venue
                                         </ul>
