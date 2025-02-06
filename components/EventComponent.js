@@ -2,8 +2,15 @@ import styles from "../styles/Event.module.scss";
 import {FaRegCalendar, FaRegClock} from 'react-icons/fa';
 import {PiMapPinBold} from "react-icons/pi";
 
-
-const Event = ({eventName, eventDate, eventTime, eventLocation, iframeSourceUrl}) => {
+const Event = ({
+                   eventName,
+                   eventDate,
+                   eventTime,
+                   eventLocation,
+                   eventLocationLink,
+                   iframeSourceUrl,
+                   eventDescription
+               }) => {
     return (
         <div className={styles.event}>
             <div className={styles.eventDetails}>
@@ -15,7 +22,10 @@ const Event = ({eventName, eventDate, eventTime, eventLocation, iframeSourceUrl}
                     <FaRegClock style={{marginRight: '4px'}}/> {eventTime}
                 </p>
                 <p>
-                    <PiMapPinBold style={{marginRight: '4px'}}/> {eventLocation}
+                    <PiMapPinBold style={{marginRight: '4px'}}/>
+                    <a href={eventLocationLink} target="_blank" rel="noopener noreferrer">
+                        {eventLocation}
+                    </a>
                 </p>
             </div>
             {iframeSourceUrl && (
@@ -31,6 +41,9 @@ const Event = ({eventName, eventDate, eventTime, eventLocation, iframeSourceUrl}
                     </div>
                 </div>
             )}
+            <div>
+                <p>{eventDescription}</p>
+            </div>
         </div>
     );
 };

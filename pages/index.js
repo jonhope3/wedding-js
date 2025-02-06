@@ -42,7 +42,6 @@ export default function Home() {
             img: `${process.env.NEXT_PUBLIC_BASE_PATH}/mckinney.jpg`,
             title: 'McKinney',
         },
-
         {
             img: `${process.env.NEXT_PUBLIC_BASE_PATH}/telluride.jpg`,
             title: 'Telluride',
@@ -81,6 +80,10 @@ export default function Home() {
         },
         {
             img: `${process.env.NEXT_PUBLIC_BASE_PATH}/proposal1.jpg`,
+            title: 'Proposal Picture',
+        },
+        {
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/family.jpg`,
             title: 'Proposal Picture',
         }
     ];
@@ -160,6 +163,7 @@ export default function Home() {
                             <div id={"overlay"} className={homeStyles.overlayContent}>
                                 <h2>Ashley & Jon</h2>
                                 <h3>October 18, 2025<br/>Miramar Beach, Florida</h3>
+                                <p>Formal invitation to come</p>
                                 <button className={homeStyles.rsvpButton} onClick={() => {
                                     if (confirm("Download Calendar Invite?")) {
                                         console.log("Downloading calendar invite");
@@ -183,23 +187,31 @@ export default function Home() {
                             <div id={"event-wrapper"} className={eventStyles.eventWrapper}>
                                 <Event
                                     eventName="Welcome Beach Bonfire"
-                                    eventDate="October 16, 2025"
-                                    eventTime="5:00 PM CDT"
-                                    eventLocation="Santa Rosa Beach, FL"
-                                    iframeSourceUrl="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2378.9886494098314!2d-86.36356978319068!3d30.374802699992255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1727637367196!5m2!1sen!2sus"
+                                    eventDate="Thursday, October 16, 2025"
+                                    eventTime="5:00 PM - 8:00 PM CDT"
+                                    eventLocation="5701 W County Highway 30A, Santa Rosa Beach, FL"
+                                    eventLocationLink={"https://maps.app.goo.gl/AGyy4Ehp6yX2qYqEA"}
+                                    eventDescription="Please consider stopping by to join us for a welcome beach bonfire party, with light bites, and drinks by the water!"
+                                    iframeSourceUrl="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2004.1021384120354!2d-86.25167959649747!3d30.35245208079558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1738868373106!5m2!1sen!2sus"
+
                                 />
                                 <Event
                                     eventName="Wedding Ceremony"
-                                    eventDate="October 18, 2025"
+                                    eventDate="Saturday, October 18, 2025"
                                     eventTime="4:00 PM CDT"
                                     eventLocation="158 Sandestin Blvd N, Miramar Beach, FL"
+                                    eventLocationLink={"https://maps.app.goo.gl/itoZqcFAezZy7m1m8"}
+                                    eventDescription="The wedding ceremony is planned to be outside. Guests are encouraged to bring sunglasses and a light jacket."
                                     iframeSourceUrl="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1502.4508689669367!2d-86.33937748835919!3d30.384693598292856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1727637539114!5m2!1sen!2sus"
                                 />
                                 <Event
                                     eventName="Reception"
-                                    eventDate="October 18, 2025"
-                                    eventTime="4:30 PM CDT"
+                                    eventDate="Saturday, October 18, 2025"
+                                    eventTime="4:30 PM - 9:30 PM CDT"
                                     eventLocation="158 Sandestin Blvd N, Miramar Beach, FL"
+                                    eventLocationLink={"https://maps.app.goo.gl/itoZqcFAezZy7m1m8"}
+                                    // eventDescription="The time between the wedding ceremony and the reception will include a time for cocktails. The reception is planned to be inside and outside. Guests are encouraged to bring sunglasses and a light jacket."
+                                    eventDescription="The reception is planned to be inside and outside. Guests are encouraged to bring sunglasses and a light jacket."
                                     iframeSourceUrl="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1502.4508689669367!2d-86.33937748835919!3d30.384693598292856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1727637539114!5m2!1sen!2sus"
                                 />
                             </div>
@@ -213,38 +225,72 @@ export default function Home() {
                                     </ul>
                                     <h4 id={'things-to-do'}>Things to Do</h4>
                                     <ul style={{listStyleType: 'none', padding: '1rem', lineHeight: '2.5rem'}}>
-                                        <li><FaUmbrellaBeach style={{marginRight: '.5rem'}}/> Enjoy the stunning beaches of the Emerald Coast</li>
-                                        <li><FaFish style={{marginRight: '.5rem'}} /> Try your luck fishing in Destin, "The World's Luckiest Fishing
+                                        <li><FaUmbrellaBeach style={{marginRight: '.5rem'}}/> Enjoy the stunning beaches
+                                            of the Emerald Coast
+                                        </li>
+                                        <li><FaFish style={{marginRight: '.5rem'}}/> Try your luck fishing in Destin,
+                                            "The World's Luckiest Fishing
                                             Village"
                                         </li>
-                                        <li><FaBicycle style={{marginRight: '.5rem'}}/> Take a scenic bike ride along the 30A trail</li>
-                                        <li><FaUtensils style={{marginRight: '.5rem'}}/> Explore the local shops and restaurants</li>
-                                        <li><GiPalmTree style={{marginRight: '.5rem'}}/> Visit the nearby state parks and nature reserves</li>
-                                        <li><GiDolphin style={{marginRight: '.5rem'}}/> Go on a dolphin watching tour</li>
-                                        <li><MdSurfing style={{marginRight: '.5rem'}}/> Try out water sports like paddleboarding and kayaking</li>
+                                        <li><FaBicycle style={{marginRight: '.5rem'}}/> Take a scenic bike ride along
+                                            the 30A trail
+                                        </li>
+                                        <li><FaUtensils style={{marginRight: '.5rem'}}/> Explore the local shops and
+                                            restaurants
+                                        </li>
+                                        <li><GiPalmTree style={{marginRight: '.5rem'}}/> Visit the nearby state parks
+                                            and nature reserves
+                                        </li>
+                                        <li><GiDolphin style={{marginRight: '.5rem'}}/> Go on a dolphin watching tour
+                                        </li>
+                                        <li><MdSurfing style={{marginRight: '.5rem'}}/> Try out water sports like
+                                            paddleboarding and kayaking
+                                        </li>
                                     </ul>
                                     <h4 id={'where-to-stay'}>Where to Stay</h4>
                                     <ul style={{listStyleType: 'none', padding: '1rem', lineHeight: '2.5rem'}}>
-                                        <li><LuHouse style={{marginRight: '.5rem'}}/> Sandestin Golf & Beach Resort</li>
+                                        <li><LuHouse style={{marginRight: '.5rem'}}/><
+                                            a href="https://www.sandestin.com/accommodations" target="_blank"
+                                              rel="noopener noreferrer">Sandestin Golf & Beach Resort</a>
+                                        </li>
                                         <li><LuHouse style={{marginRight: '.5rem'}}/> Beach house rentals</li>
                                         <ul style={{paddingLeft: '2rem'}}>
                                             <li>Consider renting a place through Airbnb, VRBO, Vacasa, or similar</li>
                                             <li>Some areas to search are Miramar Beach, Santa Rosa Beach, and Destin
                                             </li>
                                         </ul>
-                                        <li><LuHotel style={{marginRight: '.5rem'}}/> Hilton Sandestin Beach Golf Resort & Spa</li>
-                                        <li><LuHotel style={{marginRight: '.5rem'}}/> Courtyard by Marriott Sandestin at Grand Boulevard</li>
-                                        <li><LuHotel style={{marginRight: '.5rem'}}/> Hotel Effie Sandestin</li>
+                                        <li><LuHotel style={{marginRight: '.5rem'}}/><a
+                                            href="https://www.hiltonsandestinbeach.com/" target="_blank"
+                                            rel="noopener noreferrer">Hilton Sandestin Beach Golf Resort & Spa</a></li>
+                                        <li><LuHotel style={{marginRight: '.5rem'}}/><a
+                                            href="https://www.marriott.com/en-us/hotels/vpscy-courtyard-sandestin-at-grand-boulevard/overview/"
+                                            target="_blank" rel="noopener noreferrer">Courtyard by Marriott Sandestin at
+                                            Grand Boulevard</a></li>
+                                        <li><LuHotel style={{marginRight: '.5rem'}}/><a
+                                            href="https://www.hoteleffie.com/" target="_blank"
+                                            rel="noopener noreferrer">Hotel Effie Sandestin</a></li>
+                                        <li><LuHotel style={{marginRight: '.5rem'}}/><a
+                                            href="https://www.wyndhamhotels.com/laquinta/miramar-beach-florida/la-quinta-miramar-beach-destin/overview"
+                                            target="_blank"
+                                            rel="noopener noreferrer">La Quinta - Miramar Beach</a></li>
                                     </ul>
                                     <h4 id={'airports'}>Nearby Airports</h4>
                                     <ul style={{listStyleType: 'none', padding: '1rem', lineHeight: '2.5rem'}}>
-                                        <li><FaPlane style={{marginRight: '.5rem'}}/> Destin-Fort Walton Beach Airport (VPS)</li>
+                                        <li><FaPlane style={{marginRight: '.5rem'}}/> Destin-Fort Walton Beach Airport
+                                            (VPS)
+                                        </li>
                                         <ul style={{listStyleType: 'none', paddingLeft: '2rem'}}>
                                             VPS is ~45 minutes from the wedding venue
                                         </ul>
-                                        <li><FaPlane style={{marginRight: '.5rem'}}/> Panama City Beach Airport (ECP)</li>
+                                        <li><FaPlane style={{marginRight: '.5rem'}}/> Panama City Beach Airport (ECP)
+                                        </li>
                                         <ul style={{listStyleType: 'none', paddingLeft: '2rem'}}>
                                             ECP is ~45 minutes from the wedding venue
+                                        </ul>
+                                        <li><FaPlane style={{marginRight: '.5rem'}}/> Pensacola Airport (PNS)
+                                        </li>
+                                        <ul style={{listStyleType: 'none', paddingLeft: '2rem'}}>
+                                            PNS is ~90 minutes from the wedding venue
                                         </ul>
                                     </ul>
                                 </div>

@@ -30,9 +30,30 @@
   }
 
   @media (min-width: variables.$desktop-size) {
-    flex-direction: row; // Switch to row for larger screens
-    align-items: center;
+    flex-direction: column; // Two-row layout for desktop
+    align-items: stretch;
   }
+}
+
+.eventDetails {
+  flex-grow: 1;
+  margin-bottom: 20px; // Add space below event details for mobile
+
+  @media (min-width: variables.$desktop-size) {
+    margin-bottom: 0;
+    margin-right: 20px; // Add space to the right of event details for larger screens
+  }
+}
+
+.eventDetails a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+  transition: color 0.3s ease;
+}
+
+.eventDetails a:hover {
+  color: #4169E1;
 }
 
 .eventImageContainer {
@@ -57,16 +78,4 @@
   width: 100%;
   height: 100%;
   border: 0;
-}
-
-.eventDetails {
-  flex-grow: 1;
-  margin-bottom: 20px; /* Add space below event details */
-}
-
-@media (min-width: variables.$desktop-size) {
-  .eventDetails {
-    margin-bottom: 0;
-    margin-right: 20px; /* Add space to the right of event details for larger screens */
-  }
 }
