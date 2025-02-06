@@ -28,63 +28,63 @@ export default function Home() {
     const photoGalleryColumns = isDesktop ? 4 : 3;
     const pictureData = [
         {
-            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/ring-photo.jpg`,
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/images-optimized/ring-photo.webp`,
             title: 'Blinds',
         },
         {
-            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/cruise.jpg`,
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/images-optimized/cruise.webp`,
             title: 'Cruise',
         },
         {
-            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/destin.jpg`,
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/images-optimized/destin.webp`,
             title: 'Destin',
         },
         {
-            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/mckinney.jpg`,
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/images-optimized/mckinney.webp`,
             title: 'McKinney',
         },
         {
-            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/telluride.jpg`,
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/images-optimized/telluride.webp`,
             title: 'Telluride',
         },
         {
-            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/winter-games.jpg`,
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/images-optimized/winter-games.webp`,
             title: 'Winter Games Okoboji',
         },
         {
-            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/destin2.jpg`,
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/images-optimized/destin2.webp`,
             title: 'Miramar Beach',
         },
         {
-            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/destin3.jpg`,
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/images-optimized/destin3.webp`,
             title: 'Gulf',
         },
         {
-            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/islamorada.jpg`,
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/images-optimized/islamorada.webp`,
             title: 'Islamorada',
         },
         {
-            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/engagement.jpg`,
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/images-optimized/engagement.webp`,
             title: 'Engagement Picture',
         },
         {
-            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/engagement1.jpg`,
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/images-optimized/engagement1.webp`,
             title: 'Engagement Picture',
         },
         {
-            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/engagement2.jpg`,
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/images-optimized/engagement2.webp`,
             title: 'Engagement Picture',
         },
         {
-            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/proposal.jpg`,
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/images-optimized/proposal.webp`,
             title: 'Proposal Picture',
         },
         {
-            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/proposal1.jpg`,
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/images-optimized/proposal1.webp`,
             title: 'Proposal Picture',
         },
         {
-            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/family.jpg`,
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/images-optimized/family.webp`,
             title: 'Proposal Picture',
         }
     ];
@@ -147,7 +147,7 @@ export default function Home() {
                                 {
                                     children: (
                                         <Image
-                                            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/beach-hd.jpg`}
+                                            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images-optimized/beach-hd.webp`}
                                             alt={"Beach"}
                                             quality={100}
                                             style={{objectFit: 'cover'}}
