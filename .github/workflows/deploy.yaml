@@ -73,14 +73,22 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
+      # BUILD
       - name: Build with Next.js
         env:
           NODE_ENV: production
         run: ${{ steps.detect-package-manager.outputs.runner }} npm run build
 
-      - name: List directories
-        run: ls ./out/
+      # OPTIMIZE
+      - name: Minify HTML
+        run: |
+          npm install -g html-minifier
+          find out -type f -name "*.html" -exec html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true {} -o {} \;
 
+      - name: Compress static assets
+        run: find out -type f \( -name "*.html" -o -name "*.js" -o -name "*.css" -o -name "*.xml" -o -name "*.txt" -o -name "*.ico" -o -name "*.svg" \) -exec gzip -9 -k {} \;
+
+      # DEPLOY
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

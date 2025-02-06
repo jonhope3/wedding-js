@@ -16,6 +16,7 @@ import {LuHotel, LuHouse} from "react-icons/lu";
 import {FaFish} from "react-icons/fa6";
 import {GiDolphin, GiPalmTree} from "react-icons/gi";
 import {MdSurfing} from "react-icons/md";
+import Head from "next/head";
 
 export default function Home() {
     const [mounted, setMounted] = useState(false);
@@ -27,7 +28,7 @@ export default function Home() {
     const photoGalleryColumns = isDesktop ? 4 : 3;
     const pictureData = [
         {
-            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/ring-photo.jpeg`,
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH}/ring-photo.jpg`,
             title: 'Blinds',
         },
         {
@@ -134,7 +135,6 @@ export default function Home() {
         setOpenDialog(false);
     };
 
-
     return (
         <div>
             <ParallaxProvider>
@@ -147,7 +147,7 @@ export default function Home() {
                                 {
                                     children: (
                                         <Image
-                                            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/beach-hd.jpeg`}
+                                            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/beach-hd.jpg`}
                                             alt={"Beach"}
                                             quality={100}
                                             style={{objectFit: 'cover'}}
