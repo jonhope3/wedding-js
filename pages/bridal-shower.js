@@ -1,8 +1,25 @@
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import styles from '../styles/Shower.module.scss';
 
 export default function Home() {
-    const numberOfBubbles = 50;
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768); // Adjust breakpoint as needed
+        };
+
+        handleResize(); // Check on initial render
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    const numberOfBubbles = isMobile ? 10 : 50;
+    const bubbleSpeed = isMobile ? 3 : 1.5;
 
     const bubbles = Array.from({ length: numberOfBubbles }, (_, index) => (
         <div
@@ -12,7 +29,7 @@ export default function Home() {
                 left: `${Math.random() * 100}%`,
                 width: `${15 + Math.random() * 5}px`,
                 height: `${15 + Math.random() * 5}px`,
-                animationDuration: `${1.5 + Math.random() * 1}s`,
+                animationDuration: `${bubbleSpeed + Math.random() * 1}s`,
                 animationDelay: `${Math.random() * 2}s`,
             }}
         />
@@ -31,7 +48,7 @@ export default function Home() {
                 {bubbles}
             </div>
             <div className={styles.overlay}>
-                <h1>Save the date!</h1>
+                <h1>You're Invited!</h1>
                 <h2>Ashley’s Bridal Shower</h2>
                 <p className={styles.description}>
                     Join us for brunch and bubbly as we celebrate Ashley getting married!

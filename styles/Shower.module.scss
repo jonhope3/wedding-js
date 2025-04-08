@@ -1,15 +1,15 @@
 @use "fonts";
 @use "variables";
 
-// Keyframes for existing animations
+// Keyframes for animations
 @keyframes fadeInSlideUp {
   0% {
     opacity: 0;
-    transform: translate(-50%, -40%);
+    transform: translateY(15px);
   }
   100% {
     opacity: 1;
-    transform: translate(-50%, -50%);
+    transform: translateY(0);
   }
 }
 
@@ -62,9 +62,9 @@
   width: 100%;
   height: 100%;
   background-image: url('../public/wedding-shower/flowerbackground.png');
+  filter: brightness(60%); // Adjust brightness to simulate opacity
   background-size: cover;
   background-position: center;
-  opacity: 70%;
   z-index: -1;
   animation: pulse 8s ease-in-out infinite;
 }
@@ -90,88 +90,98 @@
 }
 
 .overlay {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 3vh auto;
   background: rgba(255, 255, 255, 0.95);
-  padding: 30px; // Reduced padding to save space
-  border-radius: 25px;
+  padding: 22px;
+  border-radius: 22px;
   text-align: center;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  border: 3px solid #f9e6e4;
-  height: auto; // Let the height adjust to content
-  max-height: 80vh; // Reduced to fit smaller screens
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border: 2px solid #f9e6e4;
+  height: auto;
+  max-height: 90vh;
+  width: 95%;
+  max-width: 480px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: hidden; // No scrolling
+  overflow: hidden;
   animation: fadeInSlideUp 1s ease-out forwards;
   z-index: 1;
 
-  // Mobile (default) - up to 768px
-  width: 90%;
-  max-width: 500px; // Reduced to fit content better
-
-  // Laptop/desktop - 769px and up
   @media (min-width: 769px) {
-    width: 60%; // Reduced width to avoid stretching
-    max-width: 600px; // Slightly larger for laptops
+    max-width: 750px;
+    padding: 30px;
   }
 }
 
 .overlay h1 {
   font-family: 'Parisienne', cursive;
-  font-size: 48px; // Reduced font size to save space
+  font-size: 40px;
   color: #e8a5a0;
-  margin: 0 0 15px; // Reduced margin
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  margin: 0 0 12px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.8s ease-out 0.3s forwards;
   opacity: 0;
-  position: relative;
+
+  @media (min-width: 769px) {
+    font-size: 54px;
+  }
 }
 
 .overlay h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 28px; // Reduced font size
+  font-size: 20px;
   color: #d38b9a;
-  margin: 0 0 15px; // Reduced margin
+  margin: 0 0 12px;
   font-weight: 700;
   animation: fadeIn 0.8s ease-out 0.6s forwards;
   opacity: 0;
-  position: relative;
+
+  @media (min-width: 769px) {
+    font-size: 36px;
+  }
 }
 
 .description {
   font-family: 'Playfair Display', serif;
-  font-size: 18px; // Reduced font size
+  font-size: 16px;
   color: #666;
-  margin: 0 0 20px; // Reduced margin
-  line-height: 1.5; // Slightly tighter line height
+  margin: 0 0 15px;
+  line-height: 1.4;
   font-style: italic;
   animation: fadeIn 0.8s ease-out 0.9s forwards;
   opacity: 0;
-  position: relative;
+
+  @media (min-width: 769px) {
+    font-size: 24px;
+  }
 }
 
 .details {
-  margin: 20px 0; // Reduced margin to save space
-  padding: 20px; // Reduced padding
+  margin: 15px 0;
+  padding: 15px;
   background: rgba(249, 230, 228, 0.3);
   border-radius: 15px;
   border: 2px dashed #f9e6e4;
   animation: fadeIn 0.8s ease-out 1.2s forwards;
   opacity: 0;
-  position: relative;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
 }
 
 .details p {
   font-family: 'Playfair Display', serif;
-  font-size: 16px; // Reduced font size
+  font-size: 18px;
   color: #555;
-  margin: 8px 0; // Reduced spacing between lines
-  line-height: 1.6;
+  margin: 7px 0;
+  line-height: 1.4;
+
+  @media (min-width: 769px) {
+    font-size: 21px;
+  }
 }
 
 .details p strong {
@@ -182,39 +192,49 @@
 .details::before {
   content: '✿';
   display: block;
-  font-size: 20px; // Reduced size
+  font-size: 24px;
   color: #e8a5a0;
-  margin: 0 auto 15px; // Reduced margin
+  margin: 0 auto 12px;
+
+  @media (min-width: 769px) {
+    font-size: 30px;
+  }
 }
 
 .details::after {
   content: '✿';
   display: block;
-  font-size: 20px;
+  font-size: 24px;
   color: #e8a5a0;
-  margin: 15px auto 0;
+  margin: 12px auto 0;
+
+  @media (min-width: 769px) {
+    font-size: 30px;
+  }
 }
 
 .buttons {
-  margin-top: 20px; // Reduced margin
+  margin-top: 15px;
   display: flex;
   justify-content: center;
-  gap: 15px; // Reduced gap
+  gap: 15px;
   animation: fadeIn 0.8s ease-out 1.5s forwards;
   opacity: 0;
-  position: relative;
 }
 
 .rsvpButton,
 .registryButton {
   font-family: 'Playfair Display', serif;
-  font-size: 14px; // Reduced font size
+  font-size: 18px;
   font-weight: 700;
   text-decoration: none;
-  padding: 10px 25px; // Reduced padding
-  border-radius: 20px; // Slightly smaller radius
+  padding: 12px 30px;
+  border-radius: 22px;
   transition: all 0.3s ease;
-  display: inline-block;
+
+  @media (min-width: 769px) {
+    font-size: 21px;
+  }
 }
 
 .rsvpButton {
