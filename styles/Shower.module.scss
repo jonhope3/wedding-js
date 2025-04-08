@@ -1,0 +1,244 @@
+@use "fonts";
+@use "variables";
+
+// Keyframes for existing animations
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 70%;
+  }
+  50% {
+    opacity: 60%;
+  }
+  100% {
+    opacity: 70%;
+  }
+}
+
+@keyframes bubbleRise {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-50vh) translateX(5px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(-5px);
+    opacity: 0;
+  }
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../public/wedding-shower/flowerbackground.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 70%;
+  z-index: -1;
+  animation: pulse 8s ease-in-out infinite;
+}
+
+.bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bubble {
+  position: absolute;
+  bottom: 0;
+  background: transparent;
+  border: 2px solid rgba(232, 165, 160, 0.7);
+  border-radius: 50%;
+  animation: bubbleRise 2s linear infinite;
+  box-shadow: 0 0 10px rgba(232, 165, 160, 0.7);
+}
+
+.overlay {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px; // Reduced padding to save space
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border: 3px solid #f9e6e4;
+  height: auto; // Let the height adjust to content
+  max-height: 80vh; // Reduced to fit smaller screens
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden; // No scrolling
+  animation: fadeInSlideUp 1s ease-out forwards;
+  z-index: 1;
+
+  // Mobile (default) - up to 768px
+  width: 90%;
+  max-width: 500px; // Reduced to fit content better
+
+  // Laptop/desktop - 769px and up
+  @media (min-width: 769px) {
+    width: 60%; // Reduced width to avoid stretching
+    max-width: 600px; // Slightly larger for laptops
+  }
+}
+
+.overlay h1 {
+  font-family: 'Parisienne', cursive;
+  font-size: 48px; // Reduced font size to save space
+  color: #e8a5a0;
+  margin: 0 0 15px; // Reduced margin
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-out 0.3s forwards;
+  opacity: 0;
+  position: relative;
+}
+
+.overlay h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px; // Reduced font size
+  color: #d38b9a;
+  margin: 0 0 15px; // Reduced margin
+  font-weight: 700;
+  animation: fadeIn 0.8s ease-out 0.6s forwards;
+  opacity: 0;
+  position: relative;
+}
+
+.description {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px; // Reduced font size
+  color: #666;
+  margin: 0 0 20px; // Reduced margin
+  line-height: 1.5; // Slightly tighter line height
+  font-style: italic;
+  animation: fadeIn 0.8s ease-out 0.9s forwards;
+  opacity: 0;
+  position: relative;
+}
+
+.details {
+  margin: 20px 0; // Reduced margin to save space
+  padding: 20px; // Reduced padding
+  background: rgba(249, 230, 228, 0.3);
+  border-radius: 15px;
+  border: 2px dashed #f9e6e4;
+  animation: fadeIn 0.8s ease-out 1.2s forwards;
+  opacity: 0;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.details p {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px; // Reduced font size
+  color: #555;
+  margin: 8px 0; // Reduced spacing between lines
+  line-height: 1.6;
+}
+
+.details p strong {
+  color: #d38b9a;
+  font-weight: 700;
+}
+
+.details::before {
+  content: '✿';
+  display: block;
+  font-size: 20px; // Reduced size
+  color: #e8a5a0;
+  margin: 0 auto 15px; // Reduced margin
+}
+
+.details::after {
+  content: '✿';
+  display: block;
+  font-size: 20px;
+  color: #e8a5a0;
+  margin: 15px auto 0;
+}
+
+.buttons {
+  margin-top: 20px; // Reduced margin
+  display: flex;
+  justify-content: center;
+  gap: 15px; // Reduced gap
+  animation: fadeIn 0.8s ease-out 1.5s forwards;
+  opacity: 0;
+  position: relative;
+}
+
+.rsvpButton,
+.registryButton {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px; // Reduced font size
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 25px; // Reduced padding
+  border-radius: 20px; // Slightly smaller radius
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.rsvpButton {
+  background: #e8a5a0;
+  color: #fff;
+  border: 2px solid #e8a5a0;
+}
+
+.rsvpButton:hover {
+  background: #d38b9a;
+  border-color: #d38b9a;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.registryButton {
+  background: transparent;
+  color: #d38b9a;
+  border: 2px solid #d38b9a;
+}
+
+.registryButton:hover {
+  background: #f9e6e4;
+  color: #e8a5a0;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

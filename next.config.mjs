@@ -12,7 +12,7 @@ const nextConfig = {
      *
      * @see https://nextjs.org/docs/app/api-reference/next-config-js/basePath
      */
-    basePath: `${process.env.NEXT_PUBLIC_BASE_PATH}`,
+    basePath: "", // CAUTION: This cannot be assigned by a .env file for build time (i.e. `npm build` will mess up file structure)
 
     /**
      * Disable server-based image optimization. Next.js does not support
