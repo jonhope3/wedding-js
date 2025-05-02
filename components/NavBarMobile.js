@@ -37,13 +37,20 @@ export default function NavBarMobile({isVisible}) {
             <List>
                 {[
                     {text: 'Home', icon: <HomeIcon/>, link: '#home'},
-                    {text: 'Details', icon: <EventIcon/>, link: '#event-details', subsections: [
+                    {
+                        text: 'Details', icon: <EventIcon/>, link: '#event-details', subsections: [
                             {text: 'Things to Do', icon: <BeachAccessIcon/>, link: '#things-to-do'},
                             {text: 'Where to Stay', icon: <PlaceIcon/>, link: '#where-to-stay'},
                             {text: 'Airports', icon: <FlightIcon/>, link: '#airports'}
-                        ]},
+                        ]
+                    },
                     {text: 'Gallery', icon: <PhotoLibraryIcon/>, link: '#gallery'},
-                    {text: 'Registry', icon: <CardGiftcardIcon/>, link: '#registry'}
+                    {
+                        text: 'Registry',
+                        icon: <CardGiftcardIcon/>,
+                        link: 'https://withjoy.com/teinert-hope/registry',
+                        external: true
+                    }
                 ].map((item) => (
                     <React.Fragment key={item.text}>
                         <ListItem disablePadding>

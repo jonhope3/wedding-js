@@ -16,7 +16,6 @@ import {LuHotel, LuHouse} from "react-icons/lu";
 import {FaFish} from "react-icons/fa6";
 import {GiDolphin, GiPalmTree} from "react-icons/gi";
 import {MdSurfing} from "react-icons/md";
-import Head from "next/head";
 
 export default function Home() {
     const [mounted, setMounted] = useState(false);
@@ -356,12 +355,12 @@ export default function Home() {
                                 )}
                             </Dialog>
                         </section>
-                        <section id="registry" className={homeStyles.section}>
-                            <h2>Registry</h2>
-                            <TextSection>
-                                <h3>Details to come!</h3>
-                            </TextSection>
-                        </section>
+                        {/*<section id="registry" className={homeStyles.section}>*/}
+                        {/*    <h2>Registry</h2>*/}
+                        {/*    <TextSection>*/}
+                        {/*        <h3>Details to come!</h3>*/}
+                        {/*    </TextSection>*/}
+                        {/*</section>*/}
                     </>
                 )}
                 </div>

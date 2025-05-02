@@ -7,7 +7,7 @@ function NavBarDesktop({isVisible}) {
                 <li><a href="#home">Home</a></li>
                 <li><a href="#event-details">Details</a></li>
                 <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#registry">Registry</a></li>
+                <li><a href="https://withjoy.com/teinert-hope/registry" target="_blank" rel="noopener noreferrer">Registry</a></li>
             </ul>
         </nav>
     );
