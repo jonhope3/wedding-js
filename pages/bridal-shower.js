@@ -38,8 +38,8 @@ export default function Home() {
     return (
         <div className={styles.container}>
             <Head>
-                <title>Ashley’s Bridal Shower E-vite</title>
-                <meta name="description" content="A cute bridal shower invitation for Ashley" />
+                <title>Ashley & Jon | Bridal Shower</title>
+                <meta name="description" content="Ashley's Bridal Shower Invite" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
@@ -60,8 +60,8 @@ export default function Home() {
                     <p>Formal invitation & additional details to follow</p>
                 </div>
                 <div className={styles.buttons}>
-                    <a href="#rsvp" className={styles.rsvpButton}>RSVP</a>
-                    <a href="#registry" className={styles.registryButton}>View Registry</a>
+                    {/*<a href="#rsvp" className={styles.rsvpButton}>RSVP</a>*/}
+                    <a href="https://withjoy.com/teinert-hope/registry" className={styles.registryButton} target="_blank" rel="noopener noreferrer">View Registry</a>
                 </div>
             </div>
         </div>
