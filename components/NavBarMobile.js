@@ -15,6 +15,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import PlaceIcon from '@mui/icons-material/Place';
 import FlightIcon from '@mui/icons-material/Flight';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import styles from '../styles/NavBarMobile.module.scss';
 
 export default function NavBarMobile({isVisible}) {
@@ -50,7 +51,9 @@ export default function NavBarMobile({isVisible}) {
                         icon: <CardGiftcardIcon/>,
                         link: 'https://withjoy.com/teinert-hope/registry',
                         external: true
-                    }
+                    },
+                    {text: 'FAQ', icon: <HelpOutlineIcon/>, link: '#faq'},
+
                 ].map((item) => (
                     <React.Fragment key={item.text}>
                         <ListItem disablePadding>

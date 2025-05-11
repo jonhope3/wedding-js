@@ -190,7 +190,7 @@ export default function Home() {
                                     eventTime="5:00 PM - 8:00 PM CDT"
                                     eventLocation="5701 W County Highway 30A, Santa Rosa Beach, FL"
                                     eventLocationLink={"https://maps.app.goo.gl/AGyy4Ehp6yX2qYqEA"}
-                                    eventDescription="Please consider stopping by to join us for a welcome beach bonfire party, with light bites, and drinks by the water!"
+                                    eventDescription="Please consider stopping by to join us for a beach bonfire, with light bites, and drinks by the water!"
                                     iframeSourceUrl="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2004.1021384120354!2d-86.25167959649747!3d30.35245208079558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1738868373106!5m2!1sen!2sus"
 
                                 />
@@ -355,12 +355,90 @@ export default function Home() {
                                 )}
                             </Dialog>
                         </section>
-                        {/*<section id="registry" className={homeStyles.section}>*/}
-                        {/*    <h2>Registry</h2>*/}
-                        {/*    <TextSection>*/}
-                        {/*        <h3>Details to come!</h3>*/}
-                        {/*    </TextSection>*/}
-                        {/*</section>*/}
+                        <section id="faq" className={homeStyles.section}>
+                            <h2>Questions</h2>
+                            <TextSection>
+                                <div className={textStyles.contentContainer}>
+
+                                    <h4>When should I RSVP?</h4>
+                                    <p style={{textAlign: 'center', paddingLeft: '2rem', paddingRight: '2rem'}}>
+                                        Please RSVP by August 12th. The sooner, the better!
+                                    </p>
+
+                                    <h4>What should I wear?</h4>
+                                    <p style={{textAlign: 'center', paddingLeft: '2rem', paddingRight: '2rem'}}>
+                                        <u>Beach Bonfire</u>: Beach casual! Ladies, think sundresses, stylish
+                                        two-piece sets, or a breezy top with jeans or jean shorts. Gentlemen, shorts or
+                                        pants paired with a casual button-up or polo work great.<br/>
+                                        <u>Wedding</u>: Attire is formal. Dress comfortably, but aim to
+                                        impress! Women, midi or full-length dresses are perfect, and colorful outfits are
+                                        encouraged (it is Florida, after all!). Men, suits and ties or dress pants with a jacket are
+                                        both appropriate.
+                                    </p>
+
+                                    <h4>What should I know about parking?</h4>
+                                    <p style={{textAlign: 'center', paddingLeft: '2rem', paddingRight: '2rem'}}>
+                                        There is ample parking available near the entrance of the Linkside Conference
+                                        Center. When entering the resort, you'll go through a gate with a guard, just
+                                        let them know you're attending the Teinert-Hope Wedding.
+                                    </p>
+
+                                    <h4>Are the ceremony & reception indoors or outdoors?</h4>
+                                    <p style={{textAlign: 'center', paddingLeft: '2rem', paddingRight: '2rem'}}>
+                                        The ceremony, cocktail hour, and dancing portion of the reception will be held
+                                        outdoors. Dinner will take place indoors.
+                                    </p>
+
+                                    <h4>Can I bring a guest?</h4>
+                                    <p style={{textAlign: 'center', paddingLeft: '2rem', paddingRight: '2rem'}}>
+                                        Your invitation will specify if you should bring a guest. Please refer to your
+                                        formal invite for details.
+                                    </p>
+
+                                    <h4>Can I bring my kids?</h4>
+                                    <p style={{textAlign: 'center', paddingLeft: '2rem', paddingRight: '2rem'}}>
+                                        As much as we love your little ones, the wedding-day events will be adults-only.
+                                        However, kids are welcome at the beach bonfire!
+                                    </p>
+
+                                    <h4>Do I need to rent a car?</h4>
+                                    <p style={{textAlign: 'center', paddingLeft: '2rem', paddingRight: '2rem'}}>
+                                        A rental car can be very helpful as the airports are about 45 minutes from the
+                                        venue and the area has lots to explore. This is a popular tourist area, so Uber and Lyft are usually
+                                        readily available. Renting a car depends on your lodging location and how much you plan to
+                                        explore. The 30A area is gorgeous, stretching from Miramar
+                                        Beach to Rosemary Beach, with charming towns like Grayton Beach,
+                                        WaterColor, and Seaside dotting the coast. If you're
+                                        staying on the Sandestin Golf and Beach Resort property, a tram system is
+                                        available to take you to various resort locations, including beach access.
+                                    </p>
+
+                                    <h4>What is the weather like this time of year?</h4>
+                                    <p style={{textAlign: 'center', paddingLeft: '2rem', paddingRight: '2rem'}}>
+                                        October is typically beautiful, with highs around 80°F and lows around 60°F.
+                                    </p>
+
+                                    <h4>Can I take photos & videos?</h4>
+                                    <p style={{textAlign: 'center', paddingLeft: '2rem', paddingRight: '2rem'}}>
+                                        The ceremony will be unplugged. We kindly ask you to be fully present and keep
+                                        your phones silenced and put away. Our wonderful photo and video team will
+                                        capture everything, but you’re welcome and encouraged to take photos and videos during the
+                                        cocktail hour and reception!
+                                    </p>
+
+                                    <h4>Where do I park for the beach bonfire?</h4>
+                                    <p style={{textAlign: 'center', paddingLeft: '2rem', paddingRight: '2rem'}}>
+                                        There’s a parking lot at the beach access location. If it fills up, street
+                                        parking is also available nearby.
+                                    </p>
+
+                                    <h4>Still have questions?</h4>
+                                    <p style={{textAlign: 'center', paddingLeft: '2rem', paddingRight: '2rem'}}>
+                                        Reach out to the bride or groom!
+                                    </p>
+                                </div>
+                            </TextSection>
+                        </section>
                     </>
                 )}
                 </div>
