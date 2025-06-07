@@ -162,7 +162,6 @@ export default function Home() {
                             <div id={"overlay"} className={homeStyles.overlayContent}>
                                 <h2>Ashley & Jon</h2>
                                 <h3>October 18, 2025<br/>Miramar Beach, Florida</h3>
-                                <p>Formal invitation to come</p>
                                 <button className={homeStyles.rsvpButton} onClick={() => {
                                     if (confirm("Download Calendar Invite?")) {
                                         console.log("Downloading calendar invite");
