@@ -268,6 +268,10 @@ export default function Home() {
                                             href="https://www.hoteleffie.com/" target="_blank"
                                             rel="noopener noreferrer">Hotel Effie Sandestin</a></li>
                                         <li><LuHotel style={{marginRight: '.5rem'}}/><a
+                                            href="https://www.hyatt.com/hyatt-place/en-US/ecpzs-hyatt-place-sandestin-at-grand-boulevard"
+                                            target="_blank"
+                                            rel="noopener noreferrer">Hyatt Place Sandestin at Grand Boulevard</a></li>
+                                        <li><LuHotel style={{marginRight: '.5rem'}}/><a
                                             href="https://www.wyndhamhotels.com/laquinta/miramar-beach-florida/la-quinta-miramar-beach-destin/overview"
                                             target="_blank"
                                             rel="noopener noreferrer">La Quinta - Miramar Beach</a></li>
