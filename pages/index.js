@@ -162,22 +162,22 @@ export default function Home() {
                             <div id={"overlay"} className={homeStyles.overlayContent}>
                                 <h2>Ashley & Jon</h2>
                                 <h3>October 18, 2025<br/>Miramar Beach, Florida</h3>
-                                <button className={homeStyles.rsvpButton} onClick={() => {
-                                    if (confirm("Download Calendar Invite?")) {
-                                        console.log("Downloading calendar invite");
-                                        const link = document.createElement('a');
-                                        link.href = `${process.env.NEXT_PUBLIC_BASE_PATH}/atjh-ceremony-invite.ics`;
-                                        link.download = 'ashley-jon-wedding-ceremony-invite.ics';
-                                        link.target = '_blank';
-                                        document.body.appendChild(link);
-                                        link.click();
-                                        document.body.removeChild(link);
-                                    } else {
-                                        console.log("Canceling calendar invite");
-                                    }
-                                }}>
-                                    SAVE OUR DATE
-                                </button>
+                                {/*<button className={homeStyles.rsvpButton} onClick={() => {*/}
+                                {/*    if (confirm("Download Calendar Invite?")) {*/}
+                                {/*        console.log("Downloading calendar invite");*/}
+                                {/*        const link = document.createElement('a');*/}
+                                {/*        link.href = `${process.env.NEXT_PUBLIC_BASE_PATH}/atjh-ceremony-invite.ics`;*/}
+                                {/*        link.download = 'ashley-jon-wedding-ceremony-invite.ics';*/}
+                                {/*        link.target = '_blank';*/}
+                                {/*        document.body.appendChild(link);*/}
+                                {/*        link.click();*/}
+                                {/*        document.body.removeChild(link);*/}
+                                {/*    } else {*/}
+                                {/*        console.log("Canceling calendar invite");*/}
+                                {/*    }*/}
+                                {/*}}>*/}
+                                {/*    SAVE OUR DATE*/}
+                                {/*</button>*/}
                             </div>
                         </ParallaxBanner>
                         <section id="event-details" className={homeStyles.section} style={{marginBottom: '2rem'}}>
@@ -370,9 +370,9 @@ export default function Home() {
 
                                     <h4>What should I wear?</h4>
                                     <p style={{textAlign: 'center', paddingLeft: '2rem', paddingRight: '2rem'}}>
-                                        <u>Beach Bonfire</u>: Beach casual! Ladies, think sundresses, stylish
-                                        two-piece sets, or a breezy top with jeans or jean shorts. Gentlemen, shorts or
-                                        pants paired with a casual button-up or polo work great.<br/>
+                                        <u>Beach Bonfire</u>: Beach casual! Ladies, consider sundresses, stylish
+                                        two-piece sets, or a breezy top with jeans or jean shorts. Most importantly, though,
+                                        it's a beach bonfire! Feel free to dress however you most feel comfortable at the beach after dark!<br/>
                                         <u>Wedding</u>: Attire is formal. Dress comfortably, but aim to
                                         impress! Women, midi or full-length dresses are perfect, and colorful outfits are
                                         encouraged (it is Florida, after all!). Men, suits and ties or dress pants with a jacket are
