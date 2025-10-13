@@ -15,7 +15,6 @@ import {
     IconButton,
     ImageList,
     ImageListItem,
-    Snackbar,
     useMediaQuery
 } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
@@ -30,7 +29,18 @@ export default function Home() {
     const [openDialog, setOpenDialog] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
     const [isNavbarVisible, setIsNavbarVisible] = useState(true);
-    const [isGateInfoOpen, setIsGateInfoOpen] = useState(true);
+    const [banners, setBanners] = useState([
+        {
+            id: 1,
+            message: 'On wedding day, please tell the Sandestin Resort gate attendant that your reason for visiting is for the Hope/Teinert wedding.',
+            severity: 'info'
+        },
+        // {id: 2, message: 'This is another banner for important messages.', severity: 'warning'},
+    ]);
+
+    const handleCloseBanner = (id) => {
+        setBanners(banners.filter(banner => banner.id !== id));
+    };
 
     const isDesktop = useMediaQuery('(min-width:768px)');
     const photoGalleryColumns = isDesktop ? 4 : 3;
@@ -145,23 +155,6 @@ export default function Home() {
 
     return (
         <div>
-            <Snackbar
-                open={isGateInfoOpen}
-                onClose={() => setIsGateInfoOpen(false)}
-                anchorOrigin={{vertical: 'top', horizontal: 'center'}}
-                sx={{
-                    top: {xs: '70px', md: '90px'},
-                    width: '90%',
-                    '& .MuiAlert-root': {
-                        width: '100%'
-                    }
-                }}
-            >
-                <Alert onClose={() => setIsGateInfoOpen(false)} severity="info">
-                    On wedding day, please tell the Sandestin Resort gate attendant that your reason for visiting is for
-                    the Hope/Teinert wedding.
-                </Alert>
-            </Snackbar>
             <ParallaxProvider>
                 <div id="home" className={homeStyles.container}>
                     {isDesktop ? <NavBarDesktop isVisible={isNavbarVisible}/> :
@@ -185,6 +178,26 @@ export default function Home() {
                             ]}
                             className={homeStyles.parallaxBannerLight}
                         >
+                            <div style={{
+                                position: 'absolute',
+                                top: isDesktop ? '90px' : '70px',
+                                zIndex: 10,
+                                width: '100%',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center'
+                            }}>
+                                {banners.map((banner) => (
+                                    <Alert
+                                        key={banner.id}
+                                        severity={banner.severity}
+                                        onClose={() => handleCloseBanner(banner.id)}
+                                        style={{width: '90%', margin: '5px 0'}}
+                                    >
+                                        {banner.message}
+                                    </Alert>
+                                ))}
+                            </div>
                             <div id={"overlay"} className={homeStyles.overlayContent}>
                                 <h2>Ashley & Jon</h2>
                                 <h3>October 18, 2025<br/>Miramar Beach, Florida</h3>
