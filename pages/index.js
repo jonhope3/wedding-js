@@ -9,7 +9,15 @@ import Event from "../components/EventComponent";
 import TextSection from "../components/TextSection";
 import Footer from "../components/Footer";
 import {FaBicycle, FaPlane, FaUmbrellaBeach, FaUtensils} from 'react-icons/fa';
-import {Dialog, IconButton, ImageList, ImageListItem, useMediaQuery} from "@mui/material";
+import {
+    Alert,
+    Dialog,
+    IconButton,
+    ImageList,
+    ImageListItem,
+    Snackbar,
+    useMediaQuery
+} from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 import NavBarMobile from "../components/NavBarMobile";
 import {LuHotel, LuHouse} from "react-icons/lu";
@@ -22,6 +30,7 @@ export default function Home() {
     const [openDialog, setOpenDialog] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
     const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+    const [isGateInfoOpen, setIsGateInfoOpen] = useState(true);
 
     const isDesktop = useMediaQuery('(min-width:768px)');
     const photoGalleryColumns = isDesktop ? 4 : 3;
@@ -136,6 +145,23 @@ export default function Home() {
 
     return (
         <div>
+            <Snackbar
+                open={isGateInfoOpen}
+                onClose={() => setIsGateInfoOpen(false)}
+                anchorOrigin={{vertical: 'top', horizontal: 'center'}}
+                sx={{
+                    top: {xs: '70px', md: '90px'},
+                    width: '90%',
+                    '& .MuiAlert-root': {
+                        width: '100%'
+                    }
+                }}
+            >
+                <Alert onClose={() => setIsGateInfoOpen(false)} severity="info">
+                    On wedding day, please tell the Sandestin Resort gate attendant that your reason for visiting is for
+                    the Hope/Teinert wedding.
+                </Alert>
+            </Snackbar>
             <ParallaxProvider>
                 <div id="home" className={homeStyles.container}>
                     {isDesktop ? <NavBarDesktop isVisible={isNavbarVisible}/> :
@@ -371,11 +397,15 @@ export default function Home() {
                                     <h4>What should I wear?</h4>
                                     <p style={{textAlign: 'center', paddingLeft: '2rem', paddingRight: '2rem'}}>
                                         <u>Beach Bonfire</u>: Beach casual! Ladies, consider sundresses, stylish
-                                        two-piece sets, or a breezy top with jeans or jean shorts. Most importantly, though,
-                                        it's a beach bonfire! Feel free to dress however you most feel comfortable at the beach after dark!<br/>
+                                        two-piece sets, or a breezy top with jeans or jean shorts. Most importantly,
+                                        though,
+                                        it's a beach bonfire! Feel free to dress however you most feel comfortable at
+                                        the beach after dark!<br/>
                                         <u>Wedding</u>: Attire is formal. Dress comfortably, but aim to
-                                        impress! Women, midi or full-length dresses are perfect, and colorful outfits are
-                                        encouraged (it is Florida, after all!). Men, suits and ties or dress pants with a jacket are
+                                        impress! Women, midi or full-length dresses are perfect, and colorful outfits
+                                        are
+                                        encouraged (it is Florida, after all!). Men, suits and ties or dress pants with
+                                        a jacket are
                                         both appropriate.
                                     </p>
 
@@ -407,8 +437,10 @@ export default function Home() {
                                     <h4>Do I need to rent a car?</h4>
                                     <p style={{textAlign: 'center', paddingLeft: '2rem', paddingRight: '2rem'}}>
                                         A rental car can be very helpful as the airports are about 45 minutes from the
-                                        venue and the area has lots to explore. This is a popular tourist area, so Uber and Lyft are usually
-                                        readily available. Renting a car depends on your lodging location and how much you plan to
+                                        venue and the area has lots to explore. This is a popular tourist area, so Uber
+                                        and Lyft are usually
+                                        readily available. Renting a car depends on your lodging location and how much
+                                        you plan to
                                         explore. The 30A area is gorgeous, stretching from Miramar
                                         Beach to Rosemary Beach, with charming towns like Grayton Beach,
                                         WaterColor, and Seaside dotting the coast. If you're
@@ -425,7 +457,8 @@ export default function Home() {
                                     <p style={{textAlign: 'center', paddingLeft: '2rem', paddingRight: '2rem'}}>
                                         The ceremony will be unplugged. We kindly ask you to be fully present and keep
                                         your phones silenced and put away. Our wonderful photo and video team will
-                                        capture everything, but you’re welcome and encouraged to take photos and videos during the
+                                        capture everything, but you’re welcome and encouraged to take photos and videos
+                                        during the
                                         cocktail hour and reception!
                                     </p>
 
