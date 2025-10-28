@@ -64,10 +64,25 @@ export default function Home() {
                     </p>
                     <p style={{fontSize: '.9em', fontStyle: 'italic'}}>Please RSVP Soon!</p>
                 </div>
-                <div className={styles.buttons}>
-                    {/*<a href="#rsvp" className={styles.rsvpButton}>RSVP</a>*/}
-                    <a href="https://withjoy.com/teinert-hope/registry" className={styles.registryButton}
-                       target="_blank" rel="noopener noreferrer">View Registry</a>
+                <div className={styles.registrySection}>
+                    <div className={styles.buttonContainer}>
+                        <a
+                            href="https://withjoy.com/teinert-hope/registry"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.registryButton}
+                        >
+                            RSVP
+                        </a>
+                        <a
+                            href="https://withjoy.com/teinert-hope/registry"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.registryButton}
+                        >
+                            View Registry
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

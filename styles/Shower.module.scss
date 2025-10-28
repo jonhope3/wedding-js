@@ -225,10 +225,16 @@
 .buttons {
   margin-top: 15px;
   display: flex;
+  flex-direction: column; /* Stack vertically by default (mobile) */
   justify-content: center;
-  gap: 15px;
+  gap: 12px;
   animation: fadeIn 0.8s ease-out 1.5s forwards;
   opacity: 0;
+
+  @media (min-width: 769px) {
+    flex-direction: row; /* Row on larger screens */
+    gap: 15px;
+  }
 }
 
 .rsvpButton,
@@ -243,6 +249,17 @@
 
   @media (min-width: 769px) {
     font-size: 21px;
+  }
+
+  /* Make buttons expand to full width on mobile for easier tapping */
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+
+  @media (min-width: 769px) {
+    width: auto;
+    min-width: 180px;
   }
 }
 
@@ -266,8 +283,53 @@
 }
 
 .registryButton:hover {
-  background: #cce7d0;
-  color: #4a8c57;
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #4a8c57;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+.registrySection {
+  text-align: center;
+  margin-top: 1.25rem;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.registryButton {
+  display: block;
+  padding: 0.8rem 1.75rem;
+  background: #2b5e35; /* matches existing rsvp color */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 22px;
+  font-weight: 700;
+  width: 220px;
+  text-align: center;
+  transition: all 0.25s ease-in-out;
+}
+
+.registryButton:hover {
+  background: #4a8c57;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+.rsvpText {
+  font-size: 1rem;
+  color: #2b5e35;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  /* Make registry buttons full-width on small screens for easier tapping */
+  .registryButton {
+    width: 100%;
+    max-width: 100%;
+  }
 }
