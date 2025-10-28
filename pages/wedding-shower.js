@@ -18,18 +18,18 @@ export default function Home() {
         };
     }, []);
 
-    const numberOfBubbles = isMobile ? 10 : 50;
-    const bubbleSpeed = isMobile ? 3 : 1.5;
+    const numberOfGolfBalls = isMobile ? 10 : 15;
+    const ballSpeed = 5
 
-    const bubbles = Array.from({length: numberOfBubbles}, (_, index) => (
+    const golfBalls = Array.from({length: numberOfGolfBalls}, (_, index) => (
         <div
             key={index}
-            className={styles.bubble}
+            className={styles.golfBall}
             style={{
                 left: `${Math.random() * 100}%`,
-                width: `${15 + Math.random() * 5}px`,
-                height: `${15 + Math.random() * 5}px`,
-                animationDuration: `${bubbleSpeed + Math.random() * 1}s`,
+                width: `${20 + Math.random() * 5}px`,
+                height: `${20 + Math.random() * 5}px`,
+                animationDuration: `${ballSpeed + Math.random() * 1}s`,
                 animationDelay: `${Math.random() * 2}s`,
             }}
         />
@@ -38,31 +38,31 @@ export default function Home() {
     return (
         <div className={styles.container}>
             <Head>
-                <title>Ashley & Jon | Bridal Shower</title>
-                <meta name="description" content="Ashley's Bridal Shower Invite"/>
-                <link rel="icon" href={`${process.env.NEXT_PUBLIC_BASE_PATH}/wedding-shower/champagne.png`}/>
+                <title>Ashley & Jon | Wedding Shower</title>
+                <meta name="description" content="Ashley & Jon's Wedding Shower"/>
+                <link rel="icon" href={`${process.env.NEXT_PUBLIC_BASE_PATH}/wedding-shower/golf-ball.png`}/>
             </Head>
 
             <div className={styles.background}></div>
-            <div className={styles.bubbles}>
-                {bubbles}
+            <div className={styles.golfBalls}>
+                {golfBalls}
             </div>
             <div className={styles.overlay}>
                 <h1>You're Invited!</h1>
-                <h2>Ashley’s Bridal Shower</h2>
+                <h2>Ashley & Jon's Wedding Shower</h2>
                 <p className={styles.description}>
-                    Join us for brunch and bubbly as we celebrate Ashley getting married!
+                    Join us for a special "tee time" as we celebrate the happy couple!
                 </p>
                 <div className={styles.details}>
-                    <p><strong>Date:</strong> Saturday, July 26, 2025</p>
+                    <p><strong>Date:</strong> Saturday, December 14, 2025</p>
                     <p><strong>Time:</strong> 11:00 AM</p>
                     <p><strong>Location:</strong> <a
-                        href="https://maps.app.goo.gl/oBNTtptPLikTuVt37"
+                        href="https://maps.app.goo.gl/tqyjoFxUicHNcJbbA"
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{borderBottom: '1px dotted currentColor'}}> Heirloom Haul | Frisco, TX</a>
+                        style={{borderBottom: '1px dotted currentColor'}}> Top Golf | West Des Moines, IA</a>
                     </p>
-                    <p style={{fontSize: '.9em', fontStyle: 'italic'}}>*Please RSVP by July 1st*</p>
+                    <p style={{fontSize: '.9em', fontStyle: 'italic'}}>Please RSVP Soon!</p>
                 </div>
                 <div className={styles.buttons}>
                     {/*<a href="#rsvp" className={styles.rsvpButton}>RSVP</a>*/}

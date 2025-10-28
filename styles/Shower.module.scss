@@ -34,17 +34,17 @@
   }
 }
 
-@keyframes bubbleRise {
+@keyframes golfBallBounce {
   0% {
     transform: translateY(0);
     opacity: 0.8;
   }
   50% {
-    transform: translateY(-50vh) translateX(5px);
+    transform: translateY(-30vh) translateX(15px);
     opacity: 1;
   }
   100% {
-    transform: translateY(-100vh) translateX(-5px);
+    transform: translateY(-60vh) translateX(-15px);
     opacity: 0;
   }
 }
@@ -61,15 +61,15 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../public/wedding-shower/flowerbackground.png');
-  filter: brightness(60%); // Adjust brightness to simulate opacity
+  background-image: url('../public/wedding-shower/golf-background.jpg');
+  filter: brightness(70%); // Adjust brightness to simulate opacity
   background-size: cover;
   background-position: center;
   z-index: -1;
   animation: pulse 8s ease-in-out infinite;
 }
 
-.bubbles {
+.golfBalls {
   position: absolute;
   top: 0;
   left: 0;
@@ -79,14 +79,23 @@
   pointer-events: none;
 }
 
-.bubble {
+.golfBall {
   position: absolute;
   bottom: 0;
-  background: transparent;
-  border: 2px solid rgba(232, 165, 160, 0.7);
+  background: white;
   border-radius: 50%;
-  animation: bubbleRise 2s linear infinite;
-  box-shadow: 0 0 10px rgba(232, 165, 160, 0.7);
+  animation: golfBallBounce 3s linear infinite;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  &::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: 60%;
+    background: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(200, 200, 200, 0.5) 2px, rgba(200, 200, 200, 0.5) 4px);
+    border-radius: 50%;
+  }
 }
 
 .overlay {
@@ -121,7 +130,7 @@
 .overlay h1 {
   font-family: 'Parisienne', cursive;
   font-size: 40px;
-  color: #e8a5a0;
+  color: #2b5e35;
   margin: 0 0 12px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.8s ease-out 0.3s forwards;
@@ -135,7 +144,7 @@
 .overlay h2 {
   font-family: 'Playfair Display', serif;
   font-size: 20px;
-  color: #d38b9a;
+  color: #4a8c57;
   margin: 0 0 12px;
   font-weight: 700;
   animation: fadeIn 0.8s ease-out 0.6s forwards;
@@ -164,9 +173,9 @@
 .details {
   margin: 15px 0;
   padding: 15px;
-  background: rgba(249, 230, 228, 0.3);
+  background: rgba(204, 231, 208, 0.3);
   border-radius: 15px;
-  border: 2px dashed #f9e6e4;
+  border: 2px dashed #4a8c57;
   animation: fadeIn 0.8s ease-out 1.2s forwards;
   opacity: 0;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
@@ -185,15 +194,15 @@
 }
 
 .details p strong {
-  color: #d38b9a;
+  color: #2b5e35;
   font-weight: 700;
 }
 
 .details::before {
-  content: '✿';
+  content: '⛳';
   display: block;
   font-size: 24px;
-  color: #e8a5a0;
+  color: #4a8c57;
   margin: 0 auto 12px;
 
   @media (min-width: 769px) {
@@ -202,10 +211,10 @@
 }
 
 .details::after {
-  content: '✿';
+  content: '⛳';
   display: block;
   font-size: 24px;
-  color: #e8a5a0;
+  color: #4a8c57;
   margin: 12px auto 0;
 
   @media (min-width: 769px) {
@@ -238,27 +247,27 @@
 }
 
 .rsvpButton {
-  background: #e8a5a0;
+  background: #2b5e35;
   color: #fff;
-  border: 2px solid #e8a5a0;
+  border: 2px solid #2b5e35;
 }
 
 .rsvpButton:hover {
-  background: #d38b9a;
-  border-color: #d38b9a;
+  background: #4a8c57;
+  border-color: #4a8c57;
   transform: translateY(-2px) scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .registryButton {
   background: transparent;
-  color: #d38b9a;
-  border: 2px solid #d38b9a;
+  color: #2b5e35;
+  border: 2px solid #2b5e35;
 }
 
 .registryButton:hover {
-  background: #f9e6e4;
-  color: #e8a5a0;
+  background: #cce7d0;
+  color: #4a8c57;
   transform: translateY(-2px) scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
