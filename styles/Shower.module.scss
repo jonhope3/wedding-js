@@ -333,3 +333,86 @@
     max-width: 100%;
   }
 }
+
+/* Toast styling for temporary "Coming soon" notification */
+.toast {
+  margin-top: 0.5rem;
+  background: rgba(43, 94, 53, 0.95);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  font-weight: 700;
+  text-align: center;
+  font-size: 0.95rem;
+  align-self: center; /* when inside flex column container */
+  animation: fadeIn 0.16s ease-out;
+  z-index: 5;
+}
+
+@media (min-width: 769px) {
+  .toast {
+    font-size: 1rem;
+  }
+}
+
+/* Modal popup styles */
+.modalOverlay {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 60;
+  padding: 1.5rem;
+}
+
+.modal {
+  background: #fff;
+  color: #2b5e35;
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.modalMessage {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+}
+
+.modalClose {
+  appearance: none;
+  -webkit-appearance: none;
+  background: #2b5e35;
+  color: #fff;
+  border: 0;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(43, 94, 53, 0.15);
+}
+
+.modalClose:hover {
+  background: #4a8c57;
+  transform: translateY(-2px) scale(1.02);
+}
+
+.modalClose:focus {
+  outline: 3px solid rgba(74, 140, 87, 0.25);
+  outline-offset: 3px;
+}
+
+@media (max-width: 420px) {
+  .modal {
+    padding: 1rem;
+  }
+  .modalMessage {
+    font-size: 1rem;
+  }
+}

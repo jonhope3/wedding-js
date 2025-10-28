@@ -1,9 +1,12 @@
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useRef} from 'react';
 import Head from 'next/head';
 import styles from '../styles/Shower.module.scss';
 
 export default function Home() {
     const [isMobile, setIsMobile] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+    const modalRef = useRef(null);
+    const closeBtnRef = useRef(null);
 
     useEffect(() => {
         const handleResize = () => {
@@ -17,6 +20,58 @@ export default function Home() {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+
+    // Open modal popup when RSVP isn't live yet
+    const handleRSVPClick = () => {
+        setShowModal(true);
+    };
+
+    const closeModal = () => setShowModal(false);
+
+    // Accessibility: focus management and keyboard handlers for modal (Escape to close, Tab trap)
+    useEffect(() => {
+        if (!showModal) return;
+
+        // focus the close button when modal opens
+        const focusTimer = setTimeout(() => {
+            closeBtnRef.current?.focus();
+        }, 0);
+
+        const onKeyDown = (e) => {
+            if (e.key === 'Escape') {
+                e.preventDefault();
+                setShowModal(false);
+                return;
+            }
+
+            if (e.key === 'Tab') {
+                const modalNode = modalRef.current;
+                if (!modalNode) return;
+                const focusable = modalNode.querySelectorAll('button, [href], input, textarea, select, [tabindex]:not([tabindex="-1"])');
+                if (focusable.length === 0) {
+                    e.preventDefault();
+                    return;
+                }
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
+        };
+
+        document.addEventListener('keydown', onKeyDown);
+
+        return () => {
+            clearTimeout(focusTimer);
+            document.removeEventListener('keydown', onKeyDown);
+        };
+    }, [showModal]);
 
     const numberOfGolfBalls = isMobile ? 10 : 15;
     const ballSpeed = 5
@@ -66,6 +121,8 @@ export default function Home() {
                 </div>
                 <div className={styles.registrySection}>
                     <div className={styles.buttonContainer}>
+                        {/* Original RSVP link commented out until an RSVP URL is available */}
+                        { /*
                         <a
                             href="https://withjoy.com/teinert-hope/registry"
                             target="_blank"
@@ -74,6 +131,17 @@ export default function Home() {
                         >
                             RSVP
                         </a>
+                        */ }
+
+                        {/* Temporary button that shows a "Coming soon" toast */}
+                        <button
+                            type="button"
+                            onClick={handleRSVPClick}
+                            className={styles.registryButton}
+                        >
+                            RSVP
+                        </button>
+
                         <a
                             href="https://withjoy.com/teinert-hope/registry"
                             target="_blank"
@@ -82,6 +150,34 @@ export default function Home() {
                         >
                             View Registry
                         </a>
+
+                        {/* Modal popup shown while RSVP is not available */}
+                        {showModal && (
+                            <div
+                                className={styles.modalOverlay}
+                                role="presentation"
+                                onClick={closeModal}
+                            >
+                                <div
+                                    className={styles.modal}
+                                    role="dialog"
+                                    aria-modal="true"
+                                    aria-label="RSVP coming soon"
+                                    onClick={(e) => e.stopPropagation()}
+                                    ref={modalRef}
+                                >
+                                    <p className={styles.modalMessage}>Coming soon</p>
+                                    <button
+                                        type="button"
+                                        className={styles.modalClose}
+                                        onClick={closeModal}
+                                        ref={closeBtnRef}
+                                    >
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
