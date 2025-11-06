@@ -106,18 +106,18 @@ export default function Home() {
                 <h1>You're Invited!</h1>
                 <h2>Ashley & Jon's Wedding Shower</h2>
                 <p className={styles.description}>
-                    Join us for a special "tee time" as we celebrate the happy couple!
+                    Please consider joining our "tee time" to celebrate!
                 </p>
                 <div className={styles.details}>
                     <p><strong>Date:</strong> Saturday, December 14, 2025</p>
-                    <p><strong>Time:</strong> 11:00 AM</p>
+                    <p><strong>Time:</strong> 11:30 AM - 1:30 PM</p>
                     <p><strong>Location:</strong> <a
                         href="https://maps.app.goo.gl/tqyjoFxUicHNcJbbA"
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{borderBottom: '1px dotted currentColor'}}> Top Golf | West Des Moines, IA</a>
                     </p>
-                    <p style={{fontSize: '.9em', fontStyle: 'italic'}}>Please RSVP Soon!</p>
+                    <p style={{fontSize: '.9em', fontStyle: 'italic'}}>Please RSVP by November 23</p>
                 </div>
                 <div className={styles.registrySection}>
                     <div className={styles.buttonContainer}>
@@ -137,7 +137,7 @@ export default function Home() {
                         <button
                             type="button"
                             onClick={handleRSVPClick}
-                            className={styles.registryButton}
+                            className={styles.rsvpButton}
                         >
                             RSVP
                         </button>
