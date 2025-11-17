@@ -121,26 +121,16 @@ export default function Home() {
                 </div>
                 <div className={styles.registrySection}>
                     <div className={styles.buttonContainer}>
-                        {/* Original RSVP link commented out until an RSVP URL is available */}
-                        { /*
-                        <a
-                            href="https://withjoy.com/teinert-hope/registry"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={styles.registryButton}
-                        >
-                            RSVP
-                        </a>
-                        */ }
-
-                        {/* Temporary button that shows a "Coming soon" toast */}
-                        <button
-                            type="button"
-                            onClick={handleRSVPClick}
-                            className={styles.rsvpButton}
-                        >
-                            RSVP
-                        </button>
+                        {
+                            <a
+                                href="https://withjoy.com/ashley-and-jonathan-shower/rsvp"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.registryButton}
+                            >
+                                RSVP
+                            </a>
+                        }
 
                         <a
                             href="https://withjoy.com/teinert-hope/registry"
@@ -150,34 +140,6 @@ export default function Home() {
                         >
                             View Registry
                         </a>
-
-                        {/* Modal popup shown while RSVP is not available */}
-                        {showModal && (
-                            <div
-                                className={styles.modalOverlay}
-                                role="presentation"
-                                onClick={closeModal}
-                            >
-                                <div
-                                    className={styles.modal}
-                                    role="dialog"
-                                    aria-modal="true"
-                                    aria-label="RSVP coming soon"
-                                    onClick={(e) => e.stopPropagation()}
-                                    ref={modalRef}
-                                >
-                                    <p className={styles.modalMessage}>Coming soon</p>
-                                    <button
-                                        type="button"
-                                        className={styles.modalClose}
-                                        onClick={closeModal}
-                                        ref={closeBtnRef}
-                                    >
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        )}
                     </div>
                 </div>
             </div>
